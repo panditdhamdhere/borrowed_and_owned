@@ -1,0 +1,133 @@
+[
+  {
+    "id": "the-rust-book",
+    "title": "The Rust Programming Language",
+    "description": "The official book — the best starting point for learning Rust from scratch.",
+    "url": "https://doc.rust-lang.org/book/",
+    "category": "book",
+    "level": "beginner",
+    "tags": ["official", "free"],
+    "free": true,
+    "author": "Rust Project"
+  },
+  {
+    "id": "rust-by-example",
+    "title": "Rust by Example",
+    "description": "Learn Rust through annotated examples covering core concepts and the standard library.",
+    "url": "https://doc.rust-lang.org/rust-by-example/",
+    "category": "book",
+    "level": "beginner",
+    "tags": ["official", "free", "examples"],
+    "free": true,
+    "author": "Rust Project"
+  },
+  {
+    "id": "rustlings",
+    "title": "Rustlings",
+    "description": "Small exercises to get you used to reading and writing Rust code.",
+    "url": "https://github.com/rust-lang/rustlings",
+    "category": "repo",
+    "level": "beginner",
+    "tags": ["exercises", "interactive", "free"],
+    "free": true,
+    "author": "Rust Project"
+  },
+  {
+    "id": "rustlings-course",
+    "title": "Rustlings Course (YouTube)",
+    "description": "Video walkthrough of Rustlings exercises by Let's Get Rusty.",
+    "url": "https://www.youtube.com/playlist?list=PLVQYRMWUfNkrYhV2yWtNd1aTq2ifD3K",
+    "category": "video",
+    "level": "beginner",
+    "tags": ["youtube", "exercises", "free"],
+    "free": true,
+    "author": "Let's Get Rusty"
+  },
+  {
+    "id": "zero-to-production",
+    "title": "Zero To Production In Rust",
+    "description": "A full-stack course on building production-ready Rust web applications.",
+    "url": "https://www.zero2prod.com/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": ["web", "backend", "production"],
+    "free": false,
+    "author": "Luca Palmieri"
+  },
+  {
+    "id": "tokio-tutorial",
+    "title": "Tokio Tutorial",
+    "description": "Official async Rust tutorial covering tasks, channels, and I/O.",
+    "url": "https://tokio.rs/tokio/tutorial",
+    "category": "course",
+    "level": "intermediate",
+    "tags": ["async", "tokio", "free"],
+    "free": true,
+    "author": "Tokio Contributors"
+  },
+  {
+    "id": "redox-os",
+    "title": "Redox OS",
+    "description": "A Unix-like operating system written in Rust, from scratch.",
+    "url": "https://github.com/redox-os/redox",
+    "category": "repo",
+    "level": "advanced",
+    "tags": ["os", "systems"],
+    "free": true,
+    "author": "Redox OS Team"
+  },
+  {
+    "id": "rCore-Tutorial",
+    "title": "rCore Tutorial Book",
+    "description": "Learn to write an OS kernel in Rust — a popular university course material.",
+    "url": "https://rcore-os.cn/rCore-Tutorial-Book-v3/",
+    "category": "book",
+    "level": "advanced",
+    "tags": ["os", "kernel", "free"],
+    "free": true,
+    "author": "Tsinghua University"
+  },
+  {
+    "id": "this-week-in-rust",
+    "title": "This Week in Rust",
+    "description": "Weekly newsletter with curated Rust articles, crates, and community updates.",
+    "url": "https://this-week-in-rust.org/",
+    "category": "blog",
+    "level": "beginner",
+    "tags": ["newsletter", "community", "free"],
+    "free": true
+  },
+  {
+    "id": "rust-cheatsheet",
+    "title": "Rust Language Cheat Sheet",
+    "description": "Quick reference for syntax, ownership, and common patterns.",
+    "url": "https://cheats.rs/",
+    "category": "cheatsheet",
+    "level": "beginner",
+    "tags": ["reference", "free"],
+    "free": true,
+    "author": "Lily Mara"
+  },
+  {
+    "id": "rust-analyzer",
+    "title": "rust-analyzer",
+    "description": "Experimental Rust compiler front-end for IDEs — essential tooling for Rust devs.",
+    "url": "https://github.com/rust-lang/rust-analyzer",
+    "category": "tool",
+    "level": "beginner",
+    "tags": ["ide", "lsp", "free"],
+    "free": true,
+    "author": "Rust Project"
+  },
+  {
+    "id": "new-rustacean",
+    "title": "New Rustacean",
+    "description": "Podcast episodes covering Rust fundamentals and ecosystem topics.",
+    "url": "https://newrustacean.com/",
+    "category": "podcast",
+    "level": "beginner",
+    "tags": ["audio", "free"],
+    "free": true,
+    "author": "Chris Krycho"
+  }
+]
