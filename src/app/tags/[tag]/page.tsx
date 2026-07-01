@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { ResourceFilters } from "@/components/ResourceFilters";
 import { getAllTags, getResourcesByTag } from "@/lib/resources";
+import { fetchRepoStarsMap } from "@/lib/repo-stars";
 
 interface TagPageProps {
   params: Promise<{ tag: string }>;
@@ -27,6 +28,8 @@ export default async function TagPage({ params }: TagPageProps) {
     notFound();
   }
 
+  const starsMap = await fetchRepoStarsMap(resources);
+
   return (
     <PageShell>
       <h1 className="mb-2 font-mono text-3xl font-bold text-zinc-900 dark:text-zinc-50">
@@ -36,7 +39,12 @@ export default async function TagPage({ params }: TagPageProps) {
         {resources.length} resources tagged with{" "}
         <span className="font-mono text-rust">#{tag}</span>
       </p>
-      <ResourceFilters resources={resources} initialTag={tag} showCategoryFilters />
+      <ResourceFilters
+        resources={resources}
+        starsMap={starsMap}
+        initialTag={tag}
+        showCategoryFilters
+      />
     </PageShell>
   );
 }

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { ResourceCard } from "@/components/ResourceCard";
 import { getAllPaths, getPathById, getPathResources } from "@/lib/paths";
+import { fetchRepoStarsMap } from "@/lib/repo-stars";
 
 interface PathPageProps {
   params: Promise<{ slug: string }>;
@@ -33,6 +34,7 @@ export default async function PathPage({ params }: PathPageProps) {
   }
 
   const resources = getPathResources(path);
+  const starsMap = await fetchRepoStarsMap(resources);
 
   return (
     <PageShell>
@@ -76,7 +78,11 @@ export default async function PathPage({ params }: PathPageProps) {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (
-          <ResourceCard key={resource.id} resource={resource} />
+          <ResourceCard
+            key={resource.id}
+            resource={resource}
+            stars={starsMap[resource.id]}
+          />
         ))}
       </div>
     </PageShell>

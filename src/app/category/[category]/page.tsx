@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
 import { ResourceFilters } from "@/components/ResourceFilters";
 import { getResourcesByCategory } from "@/lib/resources";
+import { fetchRepoStarsMap } from "@/lib/repo-stars";
 import { CATEGORY_LABELS, RESOURCE_CATEGORIES, type ResourceCategory } from "@/lib/types";
 
 interface CategoryPageProps {
@@ -33,6 +34,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const typedCategory = category as ResourceCategory;
   const resources = getResourcesByCategory(typedCategory);
+  const starsMap = await fetchRepoStarsMap(resources);
   const label = CATEGORY_LABELS[typedCategory];
 
   return (
@@ -45,6 +47,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </p>
       <ResourceFilters
         resources={resources}
+        starsMap={starsMap}
         initialCategory={typedCategory}
         showCategoryFilters={false}
       />

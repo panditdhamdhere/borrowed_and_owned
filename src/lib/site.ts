@@ -16,4 +16,5 @@ export const siteConfig = {
     `${GITHUB_REPO}/issues/new?template=resource.yml`,
   githubEditResourcesUrl: `${GITHUB_REPO}/edit/main/src/content/resources.json`,
   githubIssuesUrl: `${GITHUB_REPO}/issues`,
+  githubStarUrl: `${GITHUB_REPO}/stargazers`,
 };

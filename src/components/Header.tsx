@@ -37,6 +37,14 @@ export function Header() {
             </Link>
           ))}
           <a
+            href={siteConfig.githubStarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md border border-zinc-300 px-3 py-1.5 text-zinc-700 transition-colors hover:border-rust/50 hover:text-rust dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-rust-light md:inline"
+          >
+            ★ Star
+          </a>
+          <a
             href={siteConfig.githubSubmitUrl}
             target="_blank"
             rel="noopener noreferrer"

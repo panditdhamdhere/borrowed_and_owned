@@ -5,12 +5,14 @@ import { ResourceFilters } from "@/components/ResourceFilters";
 import { RustCrab } from "@/components/RustCrab";
 import { getAllPaths, getPathResources } from "@/lib/paths";
 import { getAllResources, getCategoriesWithCounts } from "@/lib/resources";
+import { fetchRepoStarsMap } from "@/lib/repo-stars";
 import { siteConfig } from "@/lib/site";
 
-export default function Home() {
+export default async function Home() {
   const resources = getAllResources();
   const categories = getCategoriesWithCounts();
   const paths = getAllPaths();
+  const starsMap = await fetchRepoStarsMap(resources);
 
   return (
     <PageShell>
@@ -94,7 +96,7 @@ export default function Home() {
         <h2 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
           All resources
         </h2>
-        <ResourceFilters resources={resources} />
+        <ResourceFilters resources={resources} starsMap={starsMap} />
       </section>
     </PageShell>
   );

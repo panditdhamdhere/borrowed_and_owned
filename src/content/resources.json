@@ -130,7 +130,7 @@
     "title": "This Week in Rust",
     "description": "Weekly newsletter with curated Rust articles, crates, and community updates.",
     "url": "https://this-week-in-rust.org/",
-    "category": "blog",
+    "category": "newsletter",
     "level": "beginner",
     "tags": [
       "newsletter",
@@ -673,5 +673,313 @@
     ],
     "free": false,
     "addedAt": "2026-06-26"
+  },
+  {
+    "id": "rust-design-patterns",
+    "title": "Rust Design Patterns",
+    "description": "Community catalog of idiomatic Rust patterns — builder, newtype, RAII, and more.",
+    "url": "https://rust-unofficial.github.io/patterns/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "patterns",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Community",
+    "addedAt": "2026-07-01"
+  },
+  {
+    "id": "are-we-web-yet",
+    "title": "Are We Web Yet?",
+    "description": "Overview of the Rust web development ecosystem — frameworks, ORMs, and deployment.",
+    "url": "https://www.arewewebyet.org/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "web",
+      "ecosystem",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-01"
+  },
+  {
+    "id": "are-we-learning-yet",
+    "title": "Are We Learning Yet?",
+    "description": "Interactive comparison of Rust learning resources ranked by community votes.",
+    "url": "http://www.arewelearningyet.com/",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "comparison",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-02"
+  },
+  {
+    "id": "hyper",
+    "title": "Hyper",
+    "description": "Fast, safe HTTP library — foundational for understanding Rust web and async I/O.",
+    "url": "https://github.com/hyperium/hyper",
+    "category": "repo",
+    "level": "intermediate",
+    "tags": [
+      "http",
+      "async",
+      "free"
+    ],
+    "free": true,
+    "author": "Hyperium",
+    "addedAt": "2026-07-02"
+  },
+  {
+    "id": "diesel",
+    "title": "Diesel",
+    "description": "Safe, extensible ORM and query builder — the standard for Rust database access.",
+    "url": "https://github.com/diesel-rs/diesel",
+    "category": "repo",
+    "level": "intermediate",
+    "tags": [
+      "database",
+      "orm",
+      "free"
+    ],
+    "free": true,
+    "author": "Diesel Contributors",
+    "addedAt": "2026-07-03"
+  },
+  {
+    "id": "mdbook",
+    "title": "mdBook",
+    "description": "Official tool for creating books from Markdown — used by The Rust Book itself.",
+    "url": "https://github.com/rust-lang/mdBook",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "documentation",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-03"
+  },
+  {
+    "id": "rust-lang-youtube",
+    "title": "Rust Lang YouTube",
+    "description": "Official Rust project channel with conference talks, tutorials, and crate demos.",
+    "url": "https://www.youtube.com/@rust-lang",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-04"
+  },
+  {
+    "id": "rust-quiz",
+    "title": "Rust Quiz",
+    "description": "Interactive quiz testing your knowledge of ownership, lifetimes, and tricky Rust semantics.",
+    "url": "https://github.com/asottile/rust-quiz",
+    "category": "course",
+    "level": "intermediate",
+    "tags": [
+      "quiz",
+      "ownership",
+      "free"
+    ],
+    "free": true,
+    "author": "Anthony Sottile",
+    "addedAt": "2026-07-04"
+  },
+  {
+    "id": "rust-interview-questions",
+    "title": "Rust Interview Questions",
+    "description": "Curated list of common Rust interview topics — ownership, Send/Sync, smart pointers.",
+    "url": "https://github.com/TusharKesarwani/Rust-Interview-Questions",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "interview",
+      "careers",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-05"
+  },
+  {
+    "id": "rustsec",
+    "title": "RustSec Advisory Database",
+    "description": "Security advisories for Rust crates — essential reading for safe dependency management.",
+    "url": "https://rustsec.org/",
+    "category": "tool",
+    "level": "intermediate",
+    "tags": [
+      "security",
+      "free"
+    ],
+    "free": true,
+    "author": "RustSec Working Group",
+    "addedAt": "2026-07-05"
+  },
+  {
+    "id": "rust-gui",
+    "title": "Are We GUI Yet?",
+    "description": "Survey of Rust GUI frameworks — egui, iced, slint, and more with examples.",
+    "url": "https://areweguiyet.com/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "gui",
+      "ecosystem",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-06"
+  },
+  {
+    "id": "rust-lang-repo",
+    "title": "The Rust Compiler",
+    "description": "The rust-lang/rust repository — read the source to understand how Rust works under the hood.",
+    "url": "https://github.com/rust-lang/rust",
+    "category": "repo",
+    "level": "advanced",
+    "tags": [
+      "compiler",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-06"
+  },
+  {
+    "id": "rust-performance-book",
+    "title": "The Rust Performance Book",
+    "description": "Guide to profiling, benchmarking, and optimizing Rust code for production.",
+    "url": "https://nnethercote.github.io/perf-book/",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "performance",
+      "free"
+    ],
+    "free": true,
+    "author": "Nicholas Nethercote",
+    "addedAt": "2026-07-07"
+  },
+  {
+    "id": "code-like-a-rustacean",
+    "title": "Code Like A Rustacean (YouTube)",
+    "description": "Short, focused videos on Rust concepts — lifetimes, traits, and common patterns.",
+    "url": "https://www.youtube.com/@CodeLikeARustacean",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "free",
+      "tutorials"
+    ],
+    "free": true,
+    "addedAt": "2026-07-07"
+  },
+  {
+    "id": "rustacean-station-youtube",
+    "title": "Rustacean Station (YouTube)",
+    "description": "Video archive of the Rustacean Station podcast interviews and community talks.",
+    "url": "https://www.youtube.com/@RustaceanStation",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "podcast",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-08"
+  },
+  {
+    "id": "rust-advent-of-code",
+    "title": "Advent of Code in Rust",
+    "description": "Community solutions and guides for solving Advent of Code puzzles in idiomatic Rust.",
+    "url": "https://adventofcode.com/",
+    "category": "course",
+    "level": "intermediate",
+    "tags": [
+      "exercises",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-08"
+  },
+  {
+    "id": "rust-foundation-learning",
+    "title": "Rust Foundation Learning",
+    "description": "Official learning hub from the Rust Foundation with courses and certification info.",
+    "url": "https://foundation.rust-lang.org/",
+    "category": "course",
+    "level": "beginner",
+    "tags": [
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Foundation",
+    "addedAt": "2026-07-09"
+  },
+  {
+    "id": "rust-verification",
+    "title": "Rust Verification Workshop",
+    "description": "Materials on formally verifying Rust programs — for safety-critical systems.",
+    "url": "https://rust-verify.github.io/",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "verification",
+      "safety",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-09"
+  },
+  {
+    "id": "rust-embedded-discovery",
+    "title": "Discovery: Microcontroller Rust",
+    "description": "Hands-on embedded Rust book — blink LEDs, set up a probe, write no_std code.",
+    "url": "https://docs.rust-embedded.org/discovery/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "embedded",
+      "hardware",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Embedded WG",
+    "addedAt": "2026-07-10"
+  },
+  {
+    "id": "rust-weekly",
+    "title": "Rust Weekly Newsletter",
+    "description": "Weekly digest of Rust articles, releases, and community highlights.",
+    "url": "https://rust-weekly.org/",
+    "category": "newsletter",
+    "level": "beginner",
+    "tags": [
+      "newsletter",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-10"
   }
 ]

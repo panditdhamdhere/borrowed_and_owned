@@ -8,6 +8,7 @@ import {
   getRelatedResources,
   getResourceById,
 } from "@/lib/resources";
+import { fetchRepoStarsMap } from "@/lib/repo-stars";
 import { CATEGORY_LABELS } from "@/lib/types";
 
 interface ResourcePageProps {
@@ -43,6 +44,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
     resource.category === "repo"
       ? await fetchGitHubStars(resource.url)
       : undefined;
+  const relatedStarsMap = await fetchRepoStarsMap(related);
 
   return (
     <PageShell>
@@ -118,7 +120,11 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
-              <ResourceCard key={item.id} resource={item} />
+              <ResourceCard
+                key={item.id}
+                resource={item}
+                stars={relatedStarsMap[item.id]}
+              />
             ))}
           </div>
         </section>

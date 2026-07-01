@@ -17,6 +17,7 @@ import { ResourceCard } from "./ResourceCard";
 
 interface ResourceFiltersProps {
   resources: Resource[];
+  starsMap?: Record<string, number>;
   initialCategory?: ResourceCategory | "all";
   initialTag?: string;
   showCategoryFilters?: boolean;
@@ -24,6 +25,7 @@ interface ResourceFiltersProps {
 
 export function ResourceFilters({
   resources,
+  starsMap = {},
   initialCategory = "all",
   initialTag,
   showCategoryFilters = true,
@@ -177,7 +179,11 @@ export function ResourceFilters({
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((resource) => (
-            <ResourceCard key={resource.id} resource={resource} />
+            <ResourceCard
+              key={resource.id}
+              resource={resource}
+              stars={starsMap[resource.id]}
+            />
           ))}
         </div>
       )}
