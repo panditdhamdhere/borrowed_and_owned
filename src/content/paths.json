@@ -8,7 +8,7 @@
       "the-rust-book",
       "rust-by-example",
       "rustlings",
-      "rustlings-course",
+      "rust-lang-book-youtube",
       "exercism-rust",
       "rust-cheatsheet"
     ]
@@ -49,6 +49,7 @@
       "programming-rust",
       "rust-for-rustaceans",
       "jon-gjengset",
+      "crust-of-rust",
       "rust-unofficial",
       "ripgrep"
     ]

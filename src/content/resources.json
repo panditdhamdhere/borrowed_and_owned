@@ -47,16 +47,17 @@
     "addedAt": "2025-06-05"
   },
   {
-    "id": "rustlings-course",
-    "title": "Rustlings Course (YouTube)",
-    "description": "Video walkthrough of Rustlings exercises by Let's Get Rusty.",
-    "url": "https://www.youtube.com/playlist?list=PLVQYRMWUfNkrYhV2yWtNd1aTq2ifD3K",
+    "id": "rust-lang-book-youtube",
+    "title": "The Rust Lang Book (YouTube Playlist)",
+    "description": "Let's Get Rusty walks through The Rust Programming Language book chapter by chapter.",
+    "url": "https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8",
     "category": "video",
     "level": "beginner",
     "tags": [
       "youtube",
-      "exercises",
-      "free"
+      "official",
+      "free",
+      "book"
     ],
     "free": true,
     "author": "Let's Get Rusty",
@@ -282,8 +283,8 @@
   {
     "id": "lets-get-rusty",
     "title": "Let's Get Rusty",
-    "description": "Popular YouTube channel with tutorials, project walkthroughs, and Rust news.",
-    "url": "https://www.youtube.com/@LetsGetRusty",
+    "description": "The #1 Rust education channel — book walkthroughs, tutorials, projects, and career tips.",
+    "url": "https://www.youtube.com/@letsgetrusty",
     "category": "video",
     "level": "beginner",
     "tags": [
@@ -298,7 +299,7 @@
   {
     "id": "jon-gjengset",
     "title": "Jon Gjengset",
-    "description": "Deep-dive videos on Rust internals, async, and advanced language features.",
+    "description": "Deep-dive videos on Rust internals, async, and advanced language features. Start with Crust of Rust.",
     "url": "https://www.youtube.com/@jonhoo",
     "category": "video",
     "level": "advanced",
@@ -536,9 +537,9 @@
   },
   {
     "id": "rustconf-youtube",
-    "title": "RustConf Talks",
-    "description": "Annual conference talks from Rust core team members and community leaders.",
-    "url": "https://www.youtube.com/c/RustConf",
+    "title": "RustConf 2023 Talks",
+    "description": "Full playlist of RustConf 2023 talks on the official Rust Videos channel.",
+    "url": "https://www.youtube.com/playlist?list=PL85XCvVPmGQgR1aCC-b0xx7sidGfopjCj",
     "category": "video",
     "level": "intermediate",
     "tags": [
@@ -769,10 +770,10 @@
     "addedAt": "2026-07-03"
   },
   {
-    "id": "rust-lang-youtube",
-    "title": "Rust Lang YouTube",
-    "description": "Official Rust project channel with conference talks, tutorials, and crate demos.",
-    "url": "https://www.youtube.com/@rust-lang",
+    "id": "rust-videos",
+    "title": "Rust Videos",
+    "description": "Official Rust team channel — conference talks, lectures, and community videos curated by the Rust project.",
+    "url": "https://www.youtube.com/@RustVideos",
     "category": "video",
     "level": "beginner",
     "tags": [
@@ -875,36 +876,6 @@
     "free": true,
     "author": "Nicholas Nethercote",
     "addedAt": "2026-07-07"
-  },
-  {
-    "id": "code-like-a-rustacean",
-    "title": "Code Like A Rustacean (YouTube)",
-    "description": "Short, focused videos on Rust concepts — lifetimes, traits, and common patterns.",
-    "url": "https://www.youtube.com/@CodeLikeARustacean",
-    "category": "video",
-    "level": "beginner",
-    "tags": [
-      "youtube",
-      "free",
-      "tutorials"
-    ],
-    "free": true,
-    "addedAt": "2026-07-07"
-  },
-  {
-    "id": "rustacean-station-youtube",
-    "title": "Rustacean Station (YouTube)",
-    "description": "Video archive of the Rustacean Station podcast interviews and community talks.",
-    "url": "https://www.youtube.com/@RustaceanStation",
-    "category": "video",
-    "level": "beginner",
-    "tags": [
-      "youtube",
-      "podcast",
-      "free"
-    ],
-    "free": true,
-    "addedAt": "2026-07-08"
   },
   {
     "id": "rust-advent-of-code",
@@ -1186,21 +1157,6 @@
     "addedAt": "2026-07-17"
   },
   {
-    "id": "rust-visualized",
-    "title": "Rust Visualized",
-    "description": "Visual explanations of ownership, borrowing, and lifetimes with diagrams.",
-    "url": "https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9fozUkQYOz94",
-    "category": "video",
-    "level": "beginner",
-    "tags": [
-      "youtube",
-      "ownership",
-      "free"
-    ],
-    "free": true,
-    "addedAt": "2026-07-17"
-  },
-  {
     "id": "crates-io",
     "title": "crates.io",
     "description": "The official Rust package registry — explore libraries and read crate documentation.",
@@ -1215,5 +1171,151 @@
     "free": true,
     "author": "Rust Project",
     "addedAt": "2026-07-18"
+  },
+  {
+    "id": "crust-of-rust",
+    "title": "Crust of Rust (Playlist)",
+    "description": "Jon Gjengset's legendary series on smart pointers, async, lifetimes, and other intermediate Rust topics.",
+    "url": "https://www.youtube.com/playlist?list=PLqbS7AVVErFiWDOAVrPt7aYmnuuOLYvOa",
+    "category": "video",
+    "level": "intermediate",
+    "tags": [
+      "youtube",
+      "playlist",
+      "free",
+      "deep-dive"
+    ],
+    "free": true,
+    "author": "Jon Gjengset",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "fasterthanlime",
+    "title": "fasterthanlime",
+    "description": "Amos Wenger's channel — vibe-oriented Rust, systems programming, and how computers actually work.",
+    "url": "https://www.youtube.com/@fasterthanlime",
+    "category": "video",
+    "level": "intermediate",
+    "tags": [
+      "youtube",
+      "systems",
+      "free"
+    ],
+    "free": true,
+    "author": "Amos Wenger",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "tensor-programming",
+    "title": "Tensor Programming",
+    "description": "Clear, beginner-friendly Rust tutorials covering language fundamentals and practical examples.",
+    "url": "https://www.youtube.com/@TensorProgramming",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "tutorials",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "tech-with-tim-rust",
+    "title": "Tech With Tim — Rust Tutorial Series",
+    "description": "Beginner-friendly Rust tutorial series covering syntax, ownership, structs, and small projects.",
+    "url": "https://www.youtube.com/playlist?list=PLzMcBGfZo4-nyLTlSRBvo0zjSnCnqjHYQ",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "playlist",
+      "free",
+      "tutorials"
+    ],
+    "free": true,
+    "author": "Tech With Tim",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "microsoft-rust-beginners",
+    "title": "Rust for Beginners (Microsoft)",
+    "description": "35-video playlist from Microsoft Developer — structured intro to Rust for programmers new to the language.",
+    "url": "https://www.youtube.com/playlist?list=PLlrxD0HtieHjbTjrchBwOVks_sr8EVW1x",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "playlist",
+      "free",
+      "microsoft"
+    ],
+    "free": true,
+    "author": "Microsoft Developer",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "freecodecamp-rust",
+    "title": "freeCodeCamp — Learn Rust (14 Hours)",
+    "description": "Full beginner Rust course with theory and hands-on exercises — ownership, traits, and memory management.",
+    "url": "https://www.youtube.com/watch?v=BpPEoZW5IiY",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "course",
+      "free"
+    ],
+    "free": true,
+    "author": "Arfan Zubi / freeCodeCamp",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "doug-milford-rust",
+    "title": "Rust Tutorial (Doug Milford)",
+    "description": "Highly recommended beginner playlist — clear explanations that make ownership and borrowing click.",
+    "url": "https://www.youtube.com/playlist?list=PLLqEtX6ql2EyPAZ1M2_C0GgVd4A-_L4_5",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "playlist",
+      "free"
+    ],
+    "free": true,
+    "author": "Doug Milford",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "chris-biscardi",
+    "title": "chris biscardi",
+    "description": "Rust, WebAssembly, game development, and cutting-edge ecosystem content from a prolific Rust educator.",
+    "url": "https://www.youtube.com/@chrisbiscardi",
+    "category": "video",
+    "level": "intermediate",
+    "tags": [
+      "youtube",
+      "wasm",
+      "free"
+    ],
+    "free": true,
+    "author": "Chris Biscardi",
+    "addedAt": "2026-07-19"
+  },
+  {
+    "id": "lets-get-rusty-survival-guide",
+    "title": "The Rust Survival Guide",
+    "description": "Let's Get Rusty covers the hardest Rust topics — ownership, borrowing, lifetimes — in one essential video.",
+    "url": "https://www.youtube.com/watch?v=usJDUSrcwqI",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "ownership",
+      "free"
+    ],
+    "free": true,
+    "author": "Let's Get Rusty",
+    "addedAt": "2026-07-19"
   }
 ]
