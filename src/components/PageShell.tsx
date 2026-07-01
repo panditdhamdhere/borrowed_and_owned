@@ -15,7 +15,7 @@ export function PageShell({ children }: PageShellProps) {
         <div className="flex flex-col items-center gap-2 text-sm text-zinc-500 dark:text-zinc-600">
           <RustCrab size={32} className="opacity-60" />
           <p>
-            Built with Next.js ·{" "}
+            Built with love ·{" "}
             <a
               href={siteConfig.githubRepo}
               target="_blank"

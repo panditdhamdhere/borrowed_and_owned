@@ -1317,5 +1317,22 @@
     "free": true,
     "author": "Let's Get Rusty",
     "addedAt": "2026-07-19"
+  },
+  {
+    "id": "francesco-ciulla",
+    "title": "Francesco Ciulla",
+    "description": "Developer educator with Rust playlists covering language basics, projects, and practical programming tips.",
+    "url": "https://www.youtube.com/@francescociulla/playlists",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "playlists",
+      "free",
+      "tutorials"
+    ],
+    "free": true,
+    "author": "Francesco Ciulla",
+    "addedAt": "2026-07-20"
   }
 ]
