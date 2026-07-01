@@ -1,12 +1,14 @@
 # Contributing
 
-Thanks for helping the Rust community learn! All contributions happen through GitHub pull requests.
+Thanks for helping the Rust community learn! All contributions happen through GitHub pull requests on [borrowed_and_owned](https://github.com/panditdhamdhere/borrowed_and_owned).
 
 ## Adding a resource
 
-1. Fork the repo
-2. Add an entry to `src/content/resources.json`
-3. Open a PR with a short description of why the resource is valuable
+1. [Fork the repo](https://github.com/panditdhamdhere/borrowed_and_owned/fork)
+2. Add an entry to [`src/content/resources.json`](https://github.com/panditdhamdhere/borrowed_and_owned/blob/main/src/content/resources.json)
+3. [Open a pull request](https://github.com/panditdhamdhere/borrowed_and_owned/compare)
+
+Or [suggest a resource via GitHub issue](https://github.com/panditdhamdhere/borrowed_and_owned/issues/new?template=resource.yml) — no code required.
 
 ### Required fields
 
@@ -55,12 +57,15 @@ Thanks for helping the Rust community learn! All contributions happen through Gi
 ## Development
 
 ```bash
+git clone https://github.com/panditdhamdhere/borrowed_and_owned.git
+cd borrowed_and_owned
 npm install
 npm run dev
 npm run lint
 npm run build
+npm run validate
 ```
 
 ## Questions?
 
-Open an issue — we're happy to help.
+[Open an issue](https://github.com/panditdhamdhere/borrowed_and_owned/issues) — we're happy to help.

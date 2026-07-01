@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,20 @@ export const metadata: Metadata = {
   title: "Borrowed & Owned — Curated Rust Learning Resources",
   description:
     "An open source collection of books, videos, courses, repos, and tools to learn Rust.",
+  metadataBase: new URL(siteConfig.siteUrl),
+  openGraph: {
+    title: "Borrowed & Owned — Curated Rust Learning Resources",
+    description: siteConfig.description,
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
+  other: {
+    "github:repo": siteConfig.githubRepo,
+  },
 };
 
 export default function RootLayout({

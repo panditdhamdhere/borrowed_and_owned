@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/panditdhamdhere/borrowed_and_owned/issues"
   },
-  "homepage": "https://github.com/panditdhamdhere/borrowed_and_owned#readme",
+  "homepage": "https://borrowed-and-owned.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

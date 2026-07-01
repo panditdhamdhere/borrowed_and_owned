@@ -3,6 +3,9 @@
 [![CI](https://github.com/panditdhamdhere/borrowed_and_owned/actions/workflows/ci.yml/badge.svg)](https://github.com/panditdhamdhere/borrowed_and_owned/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+**Repository:** [github.com/panditdhamdhere/borrowed_and_owned](https://github.com/panditdhamdhere/borrowed_and_owned)  
+**Live site:** [borrowed-and-owned.vercel.app](https://borrowed-and-owned.vercel.app)
+
 An open source, community-curated collection of Rust learning resources — books, videos, courses, repos, blogs, and more.
 
 ## Features
@@ -30,7 +33,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Adding a resource
 
-Edit `src/content/resources.json` or [open a GitHub issue](https://github.com/panditdhamdhere/borrowed_and_owned/issues/new?template=resource.yml). See [CONTRIBUTING.md](./CONTRIBUTING.md).
+Edit [`src/content/resources.json`](https://github.com/panditdhamdhere/borrowed_and_owned/blob/main/src/content/resources.json) or [open a GitHub issue](https://github.com/panditdhamdhere/borrowed_and_owned/issues/new?template=resource.yml). See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Scripts
 

@@ -22,9 +22,26 @@ export function PageShell({ children }: PageShellProps) {
               rel="noopener noreferrer"
               className="text-zinc-600 hover:text-rust transition-colors dark:text-zinc-500 dark:hover:text-rust-light"
             >
-              Contribute on GitHub
+              View on GitHub
+            </a>
+            {" · "}
+            <a
+              href={siteConfig.githubContributeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-600 hover:text-rust transition-colors dark:text-zinc-500 dark:hover:text-rust-light"
+            >
+              Contribute
             </a>
           </p>
+          <a
+            href={siteConfig.githubRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-zinc-400 hover:text-rust dark:hover:text-rust-light"
+          >
+            github.com/panditdhamdhere/borrowed_and_owned
+          </a>
         </div>
       </footer>
     </div>
