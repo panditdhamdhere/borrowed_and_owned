@@ -1,0 +1,53 @@
+import { notFound } from "next/navigation";
+import { PageShell } from "@/components/PageShell";
+import { ResourceFilters } from "@/components/ResourceFilters";
+import { getResourcesByCategory } from "@/lib/resources";
+import { CATEGORY_LABELS, RESOURCE_CATEGORIES, type ResourceCategory } from "@/lib/types";
+
+interface CategoryPageProps {
+  params: Promise<{ category: string }>;
+}
+
+export function generateStaticParams() {
+  return RESOURCE_CATEGORIES.map((category) => ({ category }));
+}
+
+export async function generateMetadata({ params }: CategoryPageProps) {
+  const { category } = await params;
+  const label = CATEGORY_LABELS[category as ResourceCategory];
+
+  if (!label) return { title: "Category not found" };
+
+  return {
+    title: `${label} — Borrowed & Owned`,
+    description: `Curated Rust ${label.toLowerCase()} for learning Rust.`,
+  };
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category } = await params;
+
+  if (!RESOURCE_CATEGORIES.includes(category as ResourceCategory)) {
+    notFound();
+  }
+
+  const typedCategory = category as ResourceCategory;
+  const resources = getResourcesByCategory(typedCategory);
+  const label = CATEGORY_LABELS[typedCategory];
+
+  return (
+    <PageShell>
+      <h1 className="mb-2 text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+        {label}
+      </h1>
+      <p className="mb-8 text-zinc-600 dark:text-zinc-400">
+        {resources.length} curated {label.toLowerCase()} to help you learn Rust.
+      </p>
+      <ResourceFilters
+        resources={resources}
+        initialCategory={typedCategory}
+        showCategoryFilters={false}
+      />
+    </PageShell>
+  );
+}

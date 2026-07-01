@@ -1,0 +1,62 @@
+name: Suggest a resource
+description: Propose a new Rust learning resource for the collection
+title: "[Resource]: "
+labels: ["resource"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Resource title
+      placeholder: e.g. The Rust Programming Language
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - book
+        - video
+        - course
+        - repo
+        - blog
+        - podcast
+        - cheatsheet
+        - tool
+        - community
+        - newsletter
+        - conference
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - beginner
+        - intermediate
+        - advanced
+        - not sure
+  - type: textarea
+    id: description
+    attributes:
+      label: Why is this useful?
+      description: 1-2 sentences for learners
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Link works and is not a duplicate
+          required: true
+        - label: Resource is freely accessible (or I've noted if paid)
+          required: true

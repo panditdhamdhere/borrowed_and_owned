@@ -16,7 +16,7 @@ Thanks for helping the Rust community learn! All contributions happen through Gi
 | `title` | Display name |
 | `description` | 1–2 sentences, no marketing fluff |
 | `url` | Direct link to the resource |
-| `category` | One of: `book`, `video`, `course`, `repo`, `blog`, `podcast`, `cheatsheet`, `tool` |
+| `category` | One of: `book`, `video`, `course`, `repo`, `blog`, `podcast`, `cheatsheet`, `tool`, `community`, `newsletter`, `conference` |
 
 ### Optional fields
 
@@ -26,6 +26,7 @@ Thanks for helping the Rust community learn! All contributions happen through Gi
 | `tags` | Array of short labels (e.g. `["free", "async"]`) |
 | `free` | `true` if no payment required |
 | `author` | Creator or organization |
+| `addedAt` | Date added in `YYYY-MM-DD` format (for changelog) |
 
 ### Example
 

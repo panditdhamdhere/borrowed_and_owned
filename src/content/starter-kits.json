@@ -1,0 +1,56 @@
+[
+  {
+    "id": "day-one-setup",
+    "title": "Day 1 Setup",
+    "description": "Install Rust and get your editor ready in under 30 minutes.",
+    "steps": [
+      {
+        "title": "Install rustup",
+        "description": "Download and install the official Rust toolchain manager from rustup.rs.",
+        "url": "https://rustup.rs/"
+      },
+      {
+        "title": "Verify installation",
+        "description": "Run `rustc --version` and `cargo --version` in your terminal.",
+        "url": "https://www.rust-lang.org/tools/install"
+      },
+      {
+        "title": "Set up your editor",
+        "description": "Install rust-analyzer for VS Code, Cursor, or Neovim for autocomplete and inline errors.",
+        "resourceId": "rust-analyzer"
+      },
+      {
+        "title": "Run your first program",
+        "description": "Create a project with `cargo new hello_rust` and run `cargo run`.",
+        "url": "https://doc.rust-lang.org/book/ch01-03-hello-cargo.html"
+      }
+    ]
+  },
+  {
+    "id": "first-week",
+    "title": "First Week Plan",
+    "description": "A structured first week: read, practice, and join the community.",
+    "steps": [
+      {
+        "title": "Read chapters 1–4 of The Rust Book",
+        "description": "Covers installation, guessing game, common concepts, and ownership basics.",
+        "resourceId": "the-rust-book"
+      },
+      {
+        "title": "Complete Rustlings exercises",
+        "description": "Hands-on drills that reinforce each chapter concept.",
+        "resourceId": "rustlings"
+      },
+      {
+        "title": "Bookmark cheats.rs",
+        "description": "Keep the cheat sheet open while coding — you'll reference it constantly.",
+        "resourceId": "rust-cheatsheet"
+      },
+      {
+        "title": "Join the community",
+        "description": "Ask questions on users.rust-lang.org or the official Discord.",
+        "resourceId": "rust-users-forum"
+      }
+    ]
+  }
+]

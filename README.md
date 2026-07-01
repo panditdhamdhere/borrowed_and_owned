@@ -1,25 +1,27 @@
 # Borrowed & Owned 🦀
 
-[![CI](https://github.com/panditdhamdhere/borrowed-and-owned/actions/workflows/ci.yml/badge.svg)](https://github.com/panditdhamdhere/borrowed-and-owned/actions/workflows/ci.yml)
+[![CI](https://github.com/panditdhamdhere/borrowed_and_owned/actions/workflows/ci.yml/badge.svg)](https://github.com/panditdhamdhere/borrowed_and_owned/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 An open source, community-curated collection of Rust learning resources — books, videos, courses, repos, blogs, and more.
 
-## Why this exists
+## Features
 
-Awesome lists on GitHub are great, but hard to browse. This project gives the Rust community a searchable, filterable site where anyone can contribute via pull request.
-
-## Stack
-
-- [Next.js 16](https://nextjs.org) (App Router, React 19)
-- TypeScript + Tailwind CSS
-- Content stored as JSON — no database needed
+- **Search & filters** — fuzzy search, category, level, free-only, sort options
+- **Learning paths** — curated roadmaps (`/paths`)
+- **Category & tag pages** — `/category/book`, `/tags/async`
+- **Resource detail pages** — `/resource/the-rust-book` with related resources
+- **Starter kits** — day-one setup guides (`/starter-kits`)
+- **Changelog** — recently added resources (`/changelog`)
+- **GitHub stars** — shown on repo resource pages
+- **Dark / light theme**
+- **Submit via GitHub** — issue template + PR workflow
 
 ## Getting started
 
 ```bash
-git clone https://github.com/panditdhamdhere/borrowed-and-owned.git
-cd borrowed-and-owned
+git clone https://github.com/panditdhamdhere/borrowed_and_owned.git
+cd borrowed_and_owned
 npm install
 npm run dev
 ```
@@ -28,32 +30,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Adding a resource
 
-Edit `src/content/resources.json` and add an entry. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full schema and guidelines.
-
-**Categories:** `book`, `video`, `course`, `repo`, `blog`, `podcast`, `cheatsheet`, `tool`
-
-**Levels:** `beginner`, `intermediate`, `advanced` (optional)
-
-## Push to GitHub
-
-If you're setting up your own fork:
-
-```bash
-# create repo on GitHub first, then:
-git remote add origin https://github.com/YOUR_USERNAME/borrowed-and-owned.git
-git push -u origin main
-```
-
-Update `src/lib/site.ts` (or set `NEXT_PUBLIC_GITHUB_REPO`) with your repo URL.
-
-## Deploy
-
-Connect the repo to [Vercel](https://vercel.com) — zero config for Next.js. Every push to `main` deploys automatically.
-
-```bash
-npm run build
-npm start
-```
+Edit `src/content/resources.json` or [open a GitHub issue](https://github.com/panditdhamdhere/borrowed_and_owned/issues/new?template=resource.yml). See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Scripts
 
@@ -62,8 +39,13 @@ npm start
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build |
 | `npm run lint` | Run ESLint |
+| `npm run validate` | Validate JSON content schema |
 | `npm start` | Serve production build |
+
+## Deploy
+
+Connect the repo to [Vercel](https://vercel.com) — zero config for Next.js.
 
 ## License
 
-[MIT](./LICENSE) — linked resources belong to their original authors.
+[MIT](./LICENSE)

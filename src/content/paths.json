@@ -1,0 +1,56 @@
+[
+  {
+    "id": "absolute-beginner",
+    "title": "Absolute Beginner",
+    "description": "Never written Rust before? Start here — official docs, exercises, and community support.",
+    "level": "beginner",
+    "resourceIds": [
+      "the-rust-book",
+      "rust-by-example",
+      "rustlings",
+      "rustlings-course",
+      "exercism-rust",
+      "rust-cheatsheet"
+    ]
+  },
+  {
+    "id": "web-development",
+    "title": "Web Development",
+    "description": "Build async APIs and production web services with Tokio and Axum.",
+    "level": "intermediate",
+    "resourceIds": [
+      "async-book",
+      "tokio-tutorial",
+      "axum",
+      "zero-to-production",
+      "command-line-rust"
+    ]
+  },
+  {
+    "id": "systems-and-os",
+    "title": "Systems & OS",
+    "description": "Dive into kernels, bare metal, and operating systems written in Rust.",
+    "level": "advanced",
+    "resourceIds": [
+      "easy-rust",
+      "embedded-rust-book",
+      "rcore-tutorial",
+      "redox-os",
+      "rust-nomicon",
+      "too-many-lists"
+    ]
+  },
+  {
+    "id": "job-ready",
+    "title": "Job Ready",
+    "description": "Go from competent to hireable — idiomatic Rust, production patterns, and deep dives.",
+    "level": "advanced",
+    "resourceIds": [
+      "programming-rust",
+      "rust-for-rustaceans",
+      "jon-gjengset",
+      "rust-unofficial",
+      "ripgrep"
+    ]
+  }
+]

@@ -6,9 +6,13 @@
     "url": "https://doc.rust-lang.org/book/",
     "category": "book",
     "level": "beginner",
-    "tags": ["official", "free"],
+    "tags": [
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-06-01"
   },
   {
     "id": "rust-by-example",
@@ -17,9 +21,14 @@
     "url": "https://doc.rust-lang.org/rust-by-example/",
     "category": "book",
     "level": "beginner",
-    "tags": ["official", "free", "examples"],
+    "tags": [
+      "official",
+      "free",
+      "examples"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-06-03"
   },
   {
     "id": "rustlings",
@@ -28,9 +37,14 @@
     "url": "https://github.com/rust-lang/rustlings",
     "category": "repo",
     "level": "beginner",
-    "tags": ["exercises", "interactive", "free"],
+    "tags": [
+      "exercises",
+      "interactive",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-06-05"
   },
   {
     "id": "rustlings-course",
@@ -39,9 +53,14 @@
     "url": "https://www.youtube.com/playlist?list=PLVQYRMWUfNkrYhV2yWtNd1aTq2ifD3K",
     "category": "video",
     "level": "beginner",
-    "tags": ["youtube", "exercises", "free"],
+    "tags": [
+      "youtube",
+      "exercises",
+      "free"
+    ],
     "free": true,
-    "author": "Let's Get Rusty"
+    "author": "Let's Get Rusty",
+    "addedAt": "2025-06-07"
   },
   {
     "id": "zero-to-production",
@@ -50,9 +69,14 @@
     "url": "https://www.zero2prod.com/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["web", "backend", "production"],
+    "tags": [
+      "web",
+      "backend",
+      "production"
+    ],
     "free": false,
-    "author": "Luca Palmieri"
+    "author": "Luca Palmieri",
+    "addedAt": "2025-06-09"
   },
   {
     "id": "tokio-tutorial",
@@ -61,9 +85,14 @@
     "url": "https://tokio.rs/tokio/tutorial",
     "category": "course",
     "level": "intermediate",
-    "tags": ["async", "tokio", "free"],
+    "tags": [
+      "async",
+      "tokio",
+      "free"
+    ],
     "free": true,
-    "author": "Tokio Contributors"
+    "author": "Tokio Contributors",
+    "addedAt": "2025-06-11"
   },
   {
     "id": "redox-os",
@@ -72,20 +101,29 @@
     "url": "https://github.com/redox-os/redox",
     "category": "repo",
     "level": "advanced",
-    "tags": ["os", "systems"],
+    "tags": [
+      "os",
+      "systems"
+    ],
     "free": true,
-    "author": "Redox OS Team"
+    "author": "Redox OS Team",
+    "addedAt": "2025-06-13"
   },
   {
-    "id": "rCore-Tutorial",
+    "id": "rcore-tutorial",
     "title": "rCore Tutorial Book",
     "description": "Learn to write an OS kernel in Rust — a popular university course material.",
     "url": "https://rcore-os.cn/rCore-Tutorial-Book-v3/",
     "category": "book",
     "level": "advanced",
-    "tags": ["os", "kernel", "free"],
+    "tags": [
+      "os",
+      "kernel",
+      "free"
+    ],
     "free": true,
-    "author": "Tsinghua University"
+    "author": "Tsinghua University",
+    "addedAt": "2025-06-15"
   },
   {
     "id": "this-week-in-rust",
@@ -94,8 +132,13 @@
     "url": "https://this-week-in-rust.org/",
     "category": "blog",
     "level": "beginner",
-    "tags": ["newsletter", "community", "free"],
-    "free": true
+    "tags": [
+      "newsletter",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2025-06-17"
   },
   {
     "id": "rust-cheatsheet",
@@ -104,9 +147,13 @@
     "url": "https://cheats.rs/",
     "category": "cheatsheet",
     "level": "beginner",
-    "tags": ["reference", "free"],
+    "tags": [
+      "reference",
+      "free"
+    ],
     "free": true,
-    "author": "Lily Mara"
+    "author": "Lily Mara",
+    "addedAt": "2025-06-19"
   },
   {
     "id": "rust-analyzer",
@@ -115,9 +162,14 @@
     "url": "https://github.com/rust-lang/rust-analyzer",
     "category": "tool",
     "level": "beginner",
-    "tags": ["ide", "lsp", "free"],
+    "tags": [
+      "ide",
+      "lsp",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-06-21"
   },
   {
     "id": "new-rustacean",
@@ -126,9 +178,13 @@
     "url": "https://newrustacean.com/",
     "category": "podcast",
     "level": "beginner",
-    "tags": ["audio", "free"],
+    "tags": [
+      "audio",
+      "free"
+    ],
     "free": true,
-    "author": "Chris Krycho"
+    "author": "Chris Krycho",
+    "addedAt": "2025-06-23"
   },
   {
     "id": "rust-nomicon",
@@ -137,9 +193,14 @@
     "url": "https://doc.rust-lang.org/nomicon/",
     "category": "book",
     "level": "advanced",
-    "tags": ["unsafe", "official", "free"],
+    "tags": [
+      "unsafe",
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-06-25"
   },
   {
     "id": "async-book",
@@ -148,9 +209,14 @@
     "url": "https://rust-lang.github.io/async-book/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["async", "official", "free"],
+    "tags": [
+      "async",
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Async Working Group"
+    "author": "Rust Async Working Group",
+    "addedAt": "2025-06-27"
   },
   {
     "id": "comprehensive-rust",
@@ -159,9 +225,14 @@
     "url": "https://google.github.io/comprehensive-rust/",
     "category": "course",
     "level": "beginner",
-    "tags": ["google", "free", "workshop"],
+    "tags": [
+      "google",
+      "free",
+      "workshop"
+    ],
     "free": true,
-    "author": "Google"
+    "author": "Google",
+    "addedAt": "2025-06-29"
   },
   {
     "id": "easy-rust",
@@ -170,9 +241,13 @@
     "url": "https://dhghomon.github.io/easy_rust/Chapter_1.html",
     "category": "book",
     "level": "beginner",
-    "tags": ["beginner-friendly", "free"],
+    "tags": [
+      "beginner-friendly",
+      "free"
+    ],
     "free": true,
-    "author": "David McLeod"
+    "author": "David McLeod",
+    "addedAt": "2025-07-01"
   },
   {
     "id": "programming-rust",
@@ -181,9 +256,13 @@
     "url": "https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["oreilly", "reference"],
+    "tags": [
+      "oreilly",
+      "reference"
+    ],
     "free": false,
-    "author": "Jim Blandy & Jason Orendorff"
+    "author": "Jim Blandy & Jason Orendorff",
+    "addedAt": "2025-07-03"
   },
   {
     "id": "rust-for-rustaceans",
@@ -192,9 +271,13 @@
     "url": "https://nostarch.com/rust-rustaceans",
     "category": "book",
     "level": "advanced",
-    "tags": ["idiomatic", "production"],
+    "tags": [
+      "idiomatic",
+      "production"
+    ],
     "free": false,
-    "author": "Jon Gjengset"
+    "author": "Jon Gjengset",
+    "addedAt": "2025-07-05"
   },
   {
     "id": "lets-get-rusty",
@@ -203,9 +286,14 @@
     "url": "https://www.youtube.com/@LetsGetRusty",
     "category": "video",
     "level": "beginner",
-    "tags": ["youtube", "free", "tutorials"],
+    "tags": [
+      "youtube",
+      "free",
+      "tutorials"
+    ],
     "free": true,
-    "author": "Let's Get Rusty"
+    "author": "Let's Get Rusty",
+    "addedAt": "2025-07-07"
   },
   {
     "id": "jon-gjengset",
@@ -214,9 +302,14 @@
     "url": "https://www.youtube.com/@jonhoo",
     "category": "video",
     "level": "advanced",
-    "tags": ["youtube", "free", "deep-dive"],
+    "tags": [
+      "youtube",
+      "free",
+      "deep-dive"
+    ],
     "free": true,
-    "author": "Jon Gjengset"
+    "author": "Jon Gjengset",
+    "addedAt": "2025-07-09"
   },
   {
     "id": "exercism-rust",
@@ -225,9 +318,14 @@
     "url": "https://exercism.org/tracks/rust",
     "category": "course",
     "level": "beginner",
-    "tags": ["exercises", "mentorship", "free"],
+    "tags": [
+      "exercises",
+      "mentorship",
+      "free"
+    ],
     "free": true,
-    "author": "Exercism"
+    "author": "Exercism",
+    "addedAt": "2025-07-11"
   },
   {
     "id": "command-line-rust",
@@ -236,9 +334,14 @@
     "url": "https://github.com/kyclark/command-line-rust",
     "category": "book",
     "level": "beginner",
-    "tags": ["cli", "projects", "free"],
+    "tags": [
+      "cli",
+      "projects",
+      "free"
+    ],
     "free": true,
-    "author": "Ken Youens-Clark"
+    "author": "Ken Youens-Clark",
+    "addedAt": "2025-07-13"
   },
   {
     "id": "embedded-rust-book",
@@ -247,9 +350,14 @@
     "url": "https://docs.rust-embedded.org/book/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["embedded", "official", "free"],
+    "tags": [
+      "embedded",
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Embedded Working Group"
+    "author": "Rust Embedded Working Group",
+    "addedAt": "2025-07-15"
   },
   {
     "id": "rust-wasm-book",
@@ -258,9 +366,14 @@
     "url": "https://rustwasm.github.io/docs/book/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["wasm", "web", "free"],
+    "tags": [
+      "wasm",
+      "web",
+      "free"
+    ],
     "free": true,
-    "author": "Rust and WASM Working Group"
+    "author": "Rust and WASM Working Group",
+    "addedAt": "2025-07-17"
   },
   {
     "id": "bevy-engine",
@@ -269,9 +382,14 @@
     "url": "https://bevyengine.org/",
     "category": "repo",
     "level": "intermediate",
-    "tags": ["gamedev", "ecs", "free"],
+    "tags": [
+      "gamedev",
+      "ecs",
+      "free"
+    ],
     "free": true,
-    "author": "Bevy Contributors"
+    "author": "Bevy Contributors",
+    "addedAt": "2025-07-19"
   },
   {
     "id": "ripgrep",
@@ -280,9 +398,14 @@
     "url": "https://github.com/BurntSushi/ripgrep",
     "category": "repo",
     "level": "intermediate",
-    "tags": ["cli", "performance", "free"],
+    "tags": [
+      "cli",
+      "performance",
+      "free"
+    ],
     "free": true,
-    "author": "Andrew Gallant"
+    "author": "Andrew Gallant",
+    "addedAt": "2025-07-21"
   },
   {
     "id": "tauri",
@@ -291,9 +414,14 @@
     "url": "https://tauri.app/",
     "category": "repo",
     "level": "intermediate",
-    "tags": ["desktop", "gui", "free"],
+    "tags": [
+      "desktop",
+      "gui",
+      "free"
+    ],
     "free": true,
-    "author": "Tauri Programme"
+    "author": "Tauri Programme",
+    "addedAt": "2025-07-23"
   },
   {
     "id": "axum",
@@ -302,9 +430,14 @@
     "url": "https://github.com/tokio-rs/axum",
     "category": "repo",
     "level": "intermediate",
-    "tags": ["web", "async", "free"],
+    "tags": [
+      "web",
+      "async",
+      "free"
+    ],
     "free": true,
-    "author": "Tokio Contributors"
+    "author": "Tokio Contributors",
+    "addedAt": "2025-07-25"
   },
   {
     "id": "rust-unofficial",
@@ -313,9 +446,14 @@
     "url": "https://rust-unofficial.github.io/patterns/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["patterns", "community", "free"],
+    "tags": [
+      "patterns",
+      "community",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Community"
+    "author": "Rust Community",
+    "addedAt": "2025-07-27"
   },
   {
     "id": "rustacean-station",
@@ -324,8 +462,13 @@
     "url": "https://rustacean-station.org/",
     "category": "podcast",
     "level": "beginner",
-    "tags": ["community", "interviews", "free"],
-    "free": true
+    "tags": [
+      "community",
+      "interviews",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2025-07-29"
   },
   {
     "id": "rust-lang-blog",
@@ -334,9 +477,14 @@
     "url": "https://blog.rust-lang.org/",
     "category": "blog",
     "level": "beginner",
-    "tags": ["official", "news", "free"],
+    "tags": [
+      "official",
+      "news",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-07-31"
   },
   {
     "id": "faster-than-liom",
@@ -345,9 +493,14 @@
     "url": "https://fasterthanli.me/",
     "category": "blog",
     "level": "intermediate",
-    "tags": ["systems", "debugging", "free"],
+    "tags": [
+      "systems",
+      "debugging",
+      "free"
+    ],
     "free": true,
-    "author": "Amos Wenger"
+    "author": "Amos Wenger",
+    "addedAt": "2025-08-02"
   },
   {
     "id": "rust-clippy",
@@ -356,9 +509,14 @@
     "url": "https://github.com/rust-lang/rust-clippy",
     "category": "tool",
     "level": "beginner",
-    "tags": ["linting", "official", "free"],
+    "tags": [
+      "linting",
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-08-04"
   },
   {
     "id": "cargo-book",
@@ -367,9 +525,14 @@
     "url": "https://doc.rust-lang.org/cargo/",
     "category": "book",
     "level": "beginner",
-    "tags": ["cargo", "official", "free"],
+    "tags": [
+      "cargo",
+      "official",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Project"
+    "author": "Rust Project",
+    "addedAt": "2025-08-06"
   },
   {
     "id": "rustconf-youtube",
@@ -378,9 +541,14 @@
     "url": "https://www.youtube.com/c/RustConf",
     "category": "video",
     "level": "intermediate",
-    "tags": ["conference", "youtube", "free"],
+    "tags": [
+      "conference",
+      "youtube",
+      "free"
+    ],
     "free": true,
-    "author": "Rust Foundation"
+    "author": "Rust Foundation",
+    "addedAt": "2025-08-08"
   },
   {
     "id": "too-many-lists",
@@ -389,9 +557,14 @@
     "url": "https://rust-unofficial.github.io/too-many-lists/",
     "category": "book",
     "level": "intermediate",
-    "tags": ["data-structures", "ownership", "free"],
+    "tags": [
+      "data-structures",
+      "ownership",
+      "free"
+    ],
     "free": true,
-    "author": "Alex Ozdemir"
+    "author": "Alex Ozdemir",
+    "addedAt": "2025-08-10"
   },
   {
     "id": "servo",
@@ -400,8 +573,105 @@
     "url": "https://github.com/servo/servo",
     "category": "repo",
     "level": "advanced",
-    "tags": ["browser", "parallelism", "free"],
+    "tags": [
+      "browser",
+      "parallelism",
+      "free"
+    ],
     "free": true,
-    "author": "Servo Project"
+    "author": "Servo Project",
+    "addedAt": "2025-08-12"
+  },
+  {
+    "id": "rust-users-forum",
+    "title": "Rust Users Forum",
+    "description": "Official community forum for help, announcements, and learning discussions.",
+    "url": "https://users.rust-lang.org/",
+    "category": "community",
+    "level": "beginner",
+    "tags": [
+      "forum",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-06-28"
+  },
+  {
+    "id": "rust-discord",
+    "title": "Rust Discord",
+    "description": "Real-time chat with Rustaceans — great for quick questions and community events.",
+    "url": "https://discord.gg/rust-lang",
+    "category": "community",
+    "level": "beginner",
+    "tags": [
+      "chat",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-06-29"
+  },
+  {
+    "id": "rust-subreddit",
+    "title": "r/rust",
+    "description": "Active Reddit community sharing news, projects, and beginner questions.",
+    "url": "https://www.reddit.com/r/rust/",
+    "category": "community",
+    "level": "beginner",
+    "tags": [
+      "reddit",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-06-29"
+  },
+  {
+    "id": "rust-jobs",
+    "title": "Rust Jobs",
+    "description": "Curated job board for Rust developer positions worldwide.",
+    "url": "https://rustjobs.dev/",
+    "category": "community",
+    "level": "intermediate",
+    "tags": [
+      "careers",
+      "jobs",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-06-30"
+  },
+  {
+    "id": "rustconf",
+    "title": "RustConf",
+    "description": "The flagship annual Rust conference — talks from core team and community leaders.",
+    "url": "https://rustconf.com/",
+    "category": "conference",
+    "level": "intermediate",
+    "tags": [
+      "talks",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Foundation",
+    "addedAt": "2026-06-25"
+  },
+  {
+    "id": "rust-nation",
+    "title": "Rust Nation UK",
+    "description": "European Rust conference with beginner-friendly and advanced tracks.",
+    "url": "https://rustnationuk.com/",
+    "category": "conference",
+    "level": "intermediate",
+    "tags": [
+      "talks",
+      "europe"
+    ],
+    "free": false,
+    "addedAt": "2026-06-26"
   }
 ]
