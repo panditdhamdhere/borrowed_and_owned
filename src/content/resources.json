@@ -1334,5 +1334,197 @@
     "free": true,
     "author": "Francesco Ciulla",
     "addedAt": "2026-07-20"
+  },
+  {
+    "id": "rust-in-action",
+    "title": "Rust in Action",
+    "description": "Project-based intro to systems programming — files, memory, threads, and networking through practical examples.",
+    "url": "https://www.manning.com/books/rust-in-action",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "manning",
+      "systems",
+      "projects"
+    ],
+    "free": false,
+    "author": "Tim McNamara",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "hands-on-rust",
+    "title": "Hands-On Rust",
+    "description": "Learn Rust by building a 2D game engine — a fun, project-driven path through ownership, ECS, and game loops.",
+    "url": "https://pragprog.com/titles/hwrust/hands-on-rust/",
+    "category": "book",
+    "level": "beginner",
+    "tags": [
+      "pragprog",
+      "gamedev",
+      "projects"
+    ],
+    "free": false,
+    "author": "Herbert Wolverson",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "black-hat-rust",
+    "title": "Black Hat Rust",
+    "description": "Offensive security with Rust — scanners, exploits, and security tooling for pentesters and red teamers.",
+    "url": "https://nostarch.com/black-hat-rust",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "security",
+      "nostarch",
+      "hacking"
+    ],
+    "free": false,
+    "author": "Sylvain Kerkhoff",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "rust-atomics-and-locks",
+    "title": "Rust Atomics and Locks",
+    "description": "The definitive guide to atomics, memory ordering, and lock-free concurrency — by the tokio-uring maintainer.",
+    "url": "https://nostarch.com/rust-atomics-and-locks",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "concurrency",
+      "nostarch",
+      "atomics"
+    ],
+    "free": false,
+    "author": "Mara Bos",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "code-like-a-pro-rust",
+    "title": "Code Like a Pro in Rust",
+    "description": "Bridge from another language to idiomatic Rust — modules, testing, error handling, and real-world patterns.",
+    "url": "https://www.manning.com/books/code-like-a-pro-in-rust",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "manning",
+      "idiomatic",
+      "career"
+    ],
+    "free": false,
+    "author": "Brenden Matthews",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "refactoring-to-rust",
+    "title": "Refactoring to Rust",
+    "description": "Incrementally migrate performance-critical Python code to Rust — practical FFI and polyglot architecture.",
+    "url": "https://www.manning.com/books/refactoring-to-rust",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "manning",
+      "python",
+      "migration"
+    ],
+    "free": false,
+    "author": "Tim McNamara",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "rust-web-development-book",
+    "title": "Rust Web Development",
+    "description": "Build full-stack web apps with Rust — Actix-web, Diesel, WebSockets, and deployment to production.",
+    "url": "https://www.manning.com/books/rust-web-development",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "manning",
+      "web",
+      "backend"
+    ],
+    "free": false,
+    "author": "Bastian Gruber",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "rust-brain-teasers",
+    "title": "Rust Brain Teasers",
+    "description": "Tricky Rust puzzles that sharpen your understanding of ownership, lifetimes, and the type system.",
+    "url": "https://nostarch.com/rust-brain-teasers",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "nostarch",
+      "puzzles",
+      "exercises"
+    ],
+    "free": false,
+    "author": "Herbert Wolverson",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "rust-programming-language-print",
+    "title": "The Rust Programming Language (Print Edition)",
+    "description": "The official Rust book in print from No Starch Press — same content as doc.rust-lang.org/book, beautifully typeset.",
+    "url": "https://nostarch.com/rust",
+    "category": "book",
+    "level": "beginner",
+    "tags": [
+      "nostarch",
+      "official",
+      "print"
+    ],
+    "free": false,
+    "author": "Steve Klabnik & Carol Nichols",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "creative-projects-rust",
+    "title": "Creative Projects for Rust Programmers",
+    "description": "Build a ray tracer, a neural network, a text editor, and more — advanced projects for experienced developers.",
+    "url": "https://www.manning.com/books/creative-projects-for-rust-programmers",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "manning",
+      "projects",
+      "advanced"
+    ],
+    "free": false,
+    "author": "Tim McNamara",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "rust-servers-services-apps",
+    "title": "Rust Servers, Services, and Apps",
+    "description": "Design and deploy production Rust services — authentication, databases, WebSockets, and cloud deployment.",
+    "url": "https://www.manning.com/books/rust-servers-services-and-apps",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "manning",
+      "production",
+      "web"
+    ],
+    "free": false,
+    "author": "Cem Karaca",
+    "addedAt": "2026-07-21"
+  },
+  {
+    "id": "command-line-rust-oreilly",
+    "title": "Command-Line Rust (O'Reilly)",
+    "description": "Paid edition of the CLI Rust book — build grep, find, and more while mastering idiomatic Rust tooling.",
+    "url": "https://www.oreilly.com/library/view/command-line-rust/9781098100608/",
+    "category": "book",
+    "level": "beginner",
+    "tags": [
+      "oreilly",
+      "cli",
+      "projects"
+    ],
+    "free": false,
+    "author": "Ken Youens-Clark",
+    "addedAt": "2026-07-21"
   }
 ]
