@@ -4,6 +4,12 @@ import { PageShell } from "@/components/PageShell";
 import { ResourceCard } from "@/components/ResourceCard";
 import { fetchGitHubStars } from "@/lib/github-stars";
 import {
+  buildResourceJsonLd,
+  buildResourceMetadata,
+  getResourceEditUrl,
+  getResourceSearchUrl,
+} from "@/lib/resource-meta";
+import {
   getAllResources,
   getRelatedResources,
   getResourceById,
@@ -25,10 +31,7 @@ export async function generateMetadata({ params }: ResourcePageProps) {
 
   if (!resource) return { title: "Resource not found" };
 
-  return {
-    title: `${resource.title} — Borrowed & Owned`,
-    description: resource.description,
-  };
+  return buildResourceMetadata(resource);
 }
 
 export default async function ResourcePage({ params }: ResourcePageProps) {
@@ -45,9 +48,15 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
       ? await fetchGitHubStars(resource.url)
       : undefined;
   const relatedStarsMap = await fetchRepoStarsMap(related);
+  const jsonLd = buildResourceJsonLd(resource);
 
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="mb-6 flex flex-wrap items-center gap-2">
         <Link
           href={`/category/${resource.category}`}
@@ -105,11 +114,27 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
         >
           Visit resource ↗
         </a>
+        <a
+          href={getResourceEditUrl(resource.id)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-lg border border-zinc-300 px-5 py-2.5 text-zinc-700 transition-colors hover:border-rust/50 hover:text-rust dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-rust-light"
+        >
+          Edit on GitHub
+        </a>
+        <a
+          href={getResourceSearchUrl(resource.id)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-lg border border-zinc-300 px-5 py-2.5 font-mono text-sm text-zinc-600 hover:border-rust/50 dark:border-zinc-700 dark:text-zinc-400"
+        >
+          Find &quot;{resource.id}&quot;
+        </a>
         <Link
           href="/"
           className="rounded-lg border border-zinc-300 px-5 py-2.5 text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"
         >
-          ← Back to all resources
+          ← Back
         </Link>
       </div>
 

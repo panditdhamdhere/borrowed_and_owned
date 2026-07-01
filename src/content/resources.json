@@ -981,5 +981,239 @@
     ],
     "free": true,
     "addedAt": "2026-07-10"
+  },
+  {
+    "id": "rust-cookbook",
+    "title": "Rust Cookbook",
+    "description": "Community-maintained recipes for common Rust programming tasks and patterns.",
+    "url": "https://rust-lang-nursery.github.io/rust-cookbook/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "recipes",
+      "community",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-11"
+  },
+  {
+    "id": "std-docs",
+    "title": "Rust Standard Library Docs",
+    "description": "Official API documentation for the Rust standard library — essential daily reference.",
+    "url": "https://doc.rust-lang.org/std/",
+    "category": "book",
+    "level": "beginner",
+    "tags": [
+      "official",
+      "reference",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-11"
+  },
+  {
+    "id": "rustfmt",
+    "title": "rustfmt",
+    "description": "Official Rust code formatter — learn idiomatic style by reading its output.",
+    "url": "https://github.com/rust-lang/rustfmt",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "formatting",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-12"
+  },
+  {
+    "id": "cargo-watch",
+    "title": "cargo-watch",
+    "description": "Automatically rebuild and test Rust projects on file changes — great for learning loops.",
+    "url": "https://github.com/watchexec/cargo-watch",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "cargo",
+      "productivity",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-12"
+  },
+  {
+    "id": "rust-playground",
+    "title": "Rust Playground",
+    "description": "Write, run, and share Rust code in the browser — no setup required.",
+    "url": "https://play.rust-lang.org/",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "official",
+      "interactive",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-13"
+  },
+  {
+    "id": "rustacean-principles",
+    "title": "Rustacean Principles",
+    "description": "Official guiding principles for Rust language design and ecosystem decisions.",
+    "url": "https://rust-lang.github.io/rust-project-goals/",
+    "category": "blog",
+    "level": "intermediate",
+    "tags": [
+      "official",
+      "design",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-13"
+  },
+  {
+    "id": "futures-rs",
+    "title": "Futures Crate",
+    "description": "Core futures and async primitives used across the Rust async ecosystem.",
+    "url": "https://github.com/rust-lang/futures-rs",
+    "category": "repo",
+    "level": "intermediate",
+    "tags": [
+      "async",
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-14"
+  },
+  {
+    "id": "tracing",
+    "title": "Tracing",
+    "description": "Application-level tracing for Rust — learn observability patterns used in production.",
+    "url": "https://github.com/tokio-rs/tracing",
+    "category": "repo",
+    "level": "intermediate",
+    "tags": [
+      "observability",
+      "tokio",
+      "free"
+    ],
+    "free": true,
+    "author": "Tokio Contributors",
+    "addedAt": "2026-07-14"
+  },
+  {
+    "id": "rust-embedded-tools",
+    "title": "Embedded Rust Tools",
+    "description": "Probe-rs, cargo-embed, and tooling for flashing and debugging embedded Rust.",
+    "url": "https://probe.rs/",
+    "category": "tool",
+    "level": "intermediate",
+    "tags": [
+      "embedded",
+      "hardware",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-15"
+  },
+  {
+    "id": "rust-osdev-wiki",
+    "title": "OSDev Rust Wiki",
+    "description": "Community wiki for writing operating systems in Rust — bootloaders, paging, drivers.",
+    "url": "https://wiki.osdev.org/Rust",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "os",
+      "wiki",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-15"
+  },
+  {
+    "id": "rust-leetcode",
+    "title": "LeetCode in Rust",
+    "description": "Collection of LeetCode solutions in Rust — practice algorithms with the type system.",
+    "url": "https://github.com/rust-lang-ru/leetcode",
+    "category": "course",
+    "level": "intermediate",
+    "tags": [
+      "algorithms",
+      "exercises",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-16"
+  },
+  {
+    "id": "rust-api-guidelines",
+    "title": "Rust API Guidelines",
+    "description": "Official conventions for designing clear, idiomatic public APIs in Rust crates.",
+    "url": "https://rust-lang.github.io/api-guidelines/",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "official",
+      "api-design",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-16"
+  },
+  {
+    "id": "rust-ffi-guide",
+    "title": "Rust FFI Guide",
+    "description": "Working with C and other languages from Rust — bindings, ABI, and safety rules.",
+    "url": "https://michael-f-bryan.github.io/rust-ffi-guide/",
+    "category": "book",
+    "level": "advanced",
+    "tags": [
+      "ffi",
+      "interop",
+      "free"
+    ],
+    "free": true,
+    "author": "Michael Bryan",
+    "addedAt": "2026-07-17"
+  },
+  {
+    "id": "rust-visualized",
+    "title": "Rust Visualized",
+    "description": "Visual explanations of ownership, borrowing, and lifetimes with diagrams.",
+    "url": "https://www.youtube.com/playlist?list=PLai5B987bZ9CoVR-QEIN9fozUkQYOz94",
+    "category": "video",
+    "level": "beginner",
+    "tags": [
+      "youtube",
+      "ownership",
+      "free"
+    ],
+    "free": true,
+    "addedAt": "2026-07-17"
+  },
+  {
+    "id": "crates-io",
+    "title": "crates.io",
+    "description": "The official Rust package registry — explore libraries and read crate documentation.",
+    "url": "https://crates.io/",
+    "category": "tool",
+    "level": "beginner",
+    "tags": [
+      "official",
+      "ecosystem",
+      "free"
+    ],
+    "free": true,
+    "author": "Rust Project",
+    "addedAt": "2026-07-18"
   }
 ]

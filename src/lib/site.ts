@@ -18,3 +18,11 @@ export const siteConfig = {
   githubIssuesUrl: `${GITHUB_REPO}/issues`,
   githubStarUrl: `${GITHUB_REPO}/stargazers`,
 };
+
+export function getResourceEditUrl(_resourceId: string): string {
+  return `${GITHUB_REPO}/edit/main/src/content/resources.json`;
+}
+
+export function getResourceSearchUrl(resourceId: string): string {
+  return `${GITHUB_REPO}/search?q=${encodeURIComponent(`"${resourceId}"`)}&type=code`;
+}
