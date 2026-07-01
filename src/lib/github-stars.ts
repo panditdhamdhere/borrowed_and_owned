@@ -11,6 +11,7 @@ export function parseGitHubRepoUrl(
 
 export async function fetchGitHubStars(
   url: string,
+  revalidateSeconds = 86400,
 ): Promise<number | undefined> {
   const parsed = parseGitHubRepoUrl(url);
   if (!parsed) return undefined;
@@ -29,7 +30,7 @@ export async function fetchGitHubStars(
       `https://api.github.com/repos/${parsed.owner}/${parsed.repo}`,
       {
         headers,
-        next: { revalidate: 86400 },
+        next: { revalidate: revalidateSeconds },
       },
     );
 

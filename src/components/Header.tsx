@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { fetchGitHubStars } from "@/lib/github-stars";
 import { siteConfig } from "@/lib/site";
+import { GitHubStarButton } from "./GitHubStarButton";
 import { RustCrab } from "./RustCrab";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -10,7 +12,9 @@ const navLinks = [
   { href: "/tags", label: "Tags" },
 ];
 
-export function Header() {
+export async function Header() {
+  const stars = await fetchGitHubStars(siteConfig.githubRepo, 300);
+
   return (
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur-sm dark:border-zinc-800/80 dark:bg-zinc-950/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
@@ -36,14 +40,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={siteConfig.githubStarUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-md border border-zinc-300 px-3 py-1.5 text-zinc-700 transition-colors hover:border-rust/50 hover:text-rust dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-rust-light md:inline"
-          >
-            ★ Star
-          </a>
+          <GitHubStarButton initialStars={stars} />
           <a
             href={siteConfig.githubSubmitUrl}
             target="_blank"
