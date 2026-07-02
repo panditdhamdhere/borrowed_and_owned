@@ -20,6 +20,8 @@ interface ResourceFiltersProps {
   starsMap?: Record<string, number>;
   initialCategory?: ResourceCategory | "all";
   initialTag?: string;
+  initialPaidOnly?: boolean;
+  initialFreeOnly?: boolean;
   showCategoryFilters?: boolean;
 }
 
@@ -28,6 +30,8 @@ export function ResourceFilters({
   starsMap = {},
   initialCategory = "all",
   initialTag,
+  initialPaidOnly = false,
+  initialFreeOnly = false,
   showCategoryFilters = true,
 }: ResourceFiltersProps) {
   const [query, setQuery] = useState(initialTag ? `#${initialTag}` : "");
@@ -35,7 +39,8 @@ export function ResourceFilters({
     initialCategory,
   );
   const [level, setLevel] = useState<ResourceLevel | "all">("all");
-  const [freeOnly, setFreeOnly] = useState(false);
+  const [freeOnly, setFreeOnly] = useState(initialFreeOnly);
+  const [paidOnly, setPaidOnly] = useState(initialPaidOnly);
   const [sort, setSort] = useState<SortOption>("recent");
 
   const filtered = useMemo(
@@ -45,9 +50,10 @@ export function ResourceFilters({
         category,
         level,
         freeOnly,
+        paidOnly,
         sort,
       }),
-    [resources, query, category, level, freeOnly, sort],
+    [resources, query, category, level, freeOnly, paidOnly, sort],
   );
 
   const categoryCounts = useMemo(() => {
@@ -64,11 +70,17 @@ export function ResourceFilters({
     return counts;
   }, [resources]);
 
+  const paidCount = useMemo(
+    () => resources.filter((resource) => resource.free === false).length,
+    [resources],
+  );
+
   function clearFilters() {
     setQuery("");
     setCategory("all");
     setLevel("all");
     setFreeOnly(false);
+    setPaidOnly(false);
     setSort("recent");
   }
 
@@ -114,10 +126,28 @@ export function ResourceFilters({
             <input
               type="checkbox"
               checked={freeOnly}
-              onChange={(event) => setFreeOnly(event.target.checked)}
+              onChange={(event) => {
+                setFreeOnly(event.target.checked);
+                if (event.target.checked) setPaidOnly(false);
+              }}
               className="rounded border-zinc-400 accent-rust"
             />
             Free only
+          </label>
+          <label className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <input
+              type="checkbox"
+              checked={paidOnly}
+              onChange={(event) => {
+                setPaidOnly(event.target.checked);
+                if (event.target.checked) setFreeOnly(false);
+              }}
+              className="rounded border-zinc-400 accent-rust"
+            />
+            Paid only
+            {paidCount > 0 && (
+              <span className="text-zinc-400">({paidCount})</span>
+            )}
           </label>
           <p className="text-sm text-zinc-500">
             {filtered.length} of {resources.length}

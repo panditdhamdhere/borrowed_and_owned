@@ -789,7 +789,7 @@
     "id": "rust-quiz",
     "title": "Rust Quiz",
     "description": "Interactive quiz testing your knowledge of ownership, lifetimes, and tricky Rust semantics.",
-    "url": "https://github.com/asottile/rust-quiz",
+    "url": "https://github.com/dtolnay/rust-quiz",
     "category": "course",
     "level": "intermediate",
     "tags": [
@@ -798,15 +798,15 @@
       "free"
     ],
     "free": true,
-    "author": "Anthony Sottile",
+    "author": "David Tolnay",
     "addedAt": "2026-07-04"
   },
   {
     "id": "rust-interview-questions",
     "title": "Rust Interview Questions",
-    "description": "Curated list of common Rust interview topics — ownership, Send/Sync, smart pointers.",
-    "url": "https://github.com/TusharKesarwani/Rust-Interview-Questions",
-    "category": "book",
+    "description": "100 coding problems plus 120 theoretical Q&A covering ownership, traits, async, and interview-style Rust puzzles.",
+    "url": "https://github.com/aarambh-darshan/100-rust-problems",
+    "category": "repo",
     "level": "intermediate",
     "tags": [
       "interview",
@@ -910,9 +910,9 @@
   {
     "id": "rust-verification",
     "title": "Rust Verification Workshop",
-    "description": "Materials on formally verifying Rust programs — for safety-critical systems.",
-    "url": "https://rust-verify.github.io/",
-    "category": "book",
+    "description": "Annual workshop on formally verifying Rust programs — talks, tool demos, and materials from the verification community.",
+    "url": "https://sites.google.com/view/rustverify2026/home",
+    "category": "conference",
     "level": "advanced",
     "tags": [
       "verification",
@@ -936,21 +936,6 @@
     ],
     "free": true,
     "author": "Rust Embedded WG",
-    "addedAt": "2026-07-10"
-  },
-  {
-    "id": "rust-weekly",
-    "title": "Rust Weekly Newsletter",
-    "description": "Weekly digest of Rust articles, releases, and community highlights.",
-    "url": "https://rust-weekly.org/",
-    "category": "newsletter",
-    "level": "beginner",
-    "tags": [
-      "newsletter",
-      "community",
-      "free"
-    ],
-    "free": true,
     "addedAt": "2026-07-10"
   },
   {
@@ -1111,9 +1096,9 @@
   },
   {
     "id": "rust-leetcode",
-    "title": "LeetCode in Rust",
-    "description": "Collection of LeetCode solutions in Rust — practice algorithms with the type system.",
-    "url": "https://github.com/rust-lang-ru/leetcode",
+    "title": "Cracking the Coding Interview in Rust",
+    "description": "Rust solutions to Cracking the Coding Interview problems — great for algorithm and interview practice.",
+    "url": "https://github.com/brndnmtthws/cracking-the-coding-interview-rust",
     "category": "course",
     "level": "intermediate",
     "tags": [
@@ -1371,28 +1356,28 @@
     "id": "black-hat-rust",
     "title": "Black Hat Rust",
     "description": "Offensive security with Rust — scanners, exploits, and security tooling for pentesters and red teamers.",
-    "url": "https://nostarch.com/black-hat-rust",
+    "url": "https://kerkour.com/black-hat-rust",
     "category": "book",
     "level": "advanced",
     "tags": [
       "security",
-      "nostarch",
-      "hacking"
+      "hacking",
+      "offensive"
     ],
     "free": false,
-    "author": "Sylvain Kerkhoff",
+    "author": "Sylvain Kerkour",
     "addedAt": "2026-07-21"
   },
   {
     "id": "rust-atomics-and-locks",
     "title": "Rust Atomics and Locks",
     "description": "The definitive guide to atomics, memory ordering, and lock-free concurrency — by the tokio-uring maintainer.",
-    "url": "https://nostarch.com/rust-atomics-and-locks",
+    "url": "https://marabos.nl/atomics/",
     "category": "book",
     "level": "advanced",
     "tags": [
       "concurrency",
-      "nostarch",
+      "oreilly",
       "atomics"
     ],
     "free": false,
@@ -1451,11 +1436,11 @@
     "id": "rust-brain-teasers",
     "title": "Rust Brain Teasers",
     "description": "Tricky Rust puzzles that sharpen your understanding of ownership, lifetimes, and the type system.",
-    "url": "https://nostarch.com/rust-brain-teasers",
+    "url": "https://pragprog.com/titles/hwrustbrain/rust-brain-teasers/",
     "category": "book",
     "level": "intermediate",
     "tags": [
-      "nostarch",
+      "pragmatic",
       "puzzles",
       "exercises"
     ],
@@ -1483,16 +1468,16 @@
     "id": "creative-projects-rust",
     "title": "Creative Projects for Rust Programmers",
     "description": "Build a ray tracer, a neural network, a text editor, and more — advanced projects for experienced developers.",
-    "url": "https://www.manning.com/books/creative-projects-for-rust-programmers",
+    "url": "https://www.packtpub.com/product/creative-projects-for-rust-programmers/9781789346220",
     "category": "book",
     "level": "advanced",
     "tags": [
-      "manning",
+      "packt",
       "projects",
       "advanced"
     ],
     "free": false,
-    "author": "Tim McNamara",
+    "author": "Carlo Milanesi",
     "addedAt": "2026-07-21"
   },
   {
@@ -1515,7 +1500,7 @@
     "id": "command-line-rust-oreilly",
     "title": "Command-Line Rust (O'Reilly)",
     "description": "Paid edition of the CLI Rust book — build grep, find, and more while mastering idiomatic Rust tooling.",
-    "url": "https://www.oreilly.com/library/view/command-line-rust/9781098100608/",
+    "url": "https://www.oreilly.com/library/view/command-line-rust/9781098109424/",
     "category": "book",
     "level": "beginner",
     "tags": [

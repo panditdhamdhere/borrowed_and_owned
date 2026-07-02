@@ -53,5 +53,21 @@
       "rust-unofficial",
       "ripgrep"
     ]
+  },
+  {
+    "id": "interview-prep",
+    "title": "Interview Prep",
+    "description": "Prepare for Rust interviews — fundamentals, practice problems, tricky puzzles, and reading production code.",
+    "level": "intermediate",
+    "resourceIds": [
+      "the-rust-book",
+      "exercism-rust",
+      "rust-quiz",
+      "rust-brain-teasers",
+      "rust-interview-questions",
+      "programming-rust",
+      "crust-of-rust",
+      "ripgrep"
+    ]
   }
 ]

@@ -4,13 +4,14 @@ import { PageShell } from "@/components/PageShell";
 import { ResourceFilters } from "@/components/ResourceFilters";
 import { RustCrab } from "@/components/RustCrab";
 import { getAllPaths, getPathResources } from "@/lib/paths";
-import { getAllResources, getCategoriesWithCounts } from "@/lib/resources";
+import { getAllResources, getCategoriesWithCounts, getPaidBooks } from "@/lib/resources";
 import { fetchRepoStarsMap } from "@/lib/repo-stars";
 import { siteConfig } from "@/lib/site";
 
 export default async function Home() {
   const resources = getAllResources();
   const categories = getCategoriesWithCounts();
+  const paidBooks = getPaidBooks();
   const paths = getAllPaths();
   const starsMap = await fetchRepoStarsMap(resources);
 
@@ -66,6 +67,15 @@ export default async function Home() {
               {label.toLowerCase()}
             </Link>
           ))}
+          {paidBooks.length > 0 && (
+            <Link
+              href="/category/book?paid=1"
+              className="rounded-lg border border-rust/30 bg-rust/5 px-3 py-1.5 text-sm text-rust transition-colors hover:border-rust/50 dark:border-rust/40 dark:bg-rust/10 dark:text-rust-light"
+            >
+              <span className="font-semibold">{paidBooks.length}</span> paid
+              books
+            </Link>
+          )}
         </div>
       </section>
 
@@ -81,8 +91,8 @@ export default async function Home() {
             View all →
           </Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {paths.slice(0, 4).map((path) => (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {paths.map((path) => (
             <LearningPathCard
               key={path.id}
               path={path}

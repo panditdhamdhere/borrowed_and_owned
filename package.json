@@ -17,7 +17,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "validate": "tsx scripts/validate-resources.ts"
+    "validate": "tsx scripts/validate-resources.ts",
+    "check-links": "tsx scripts/check-links.ts"
   },
   "dependencies": {
     "fuse.js": "^7.4.2",

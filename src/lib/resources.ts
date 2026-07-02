@@ -15,6 +15,7 @@ export interface ResourceFilters {
   category: ResourceCategory | "all";
   level: ResourceLevel | "all";
   freeOnly: boolean;
+  paidOnly: boolean;
   sort: SortOption;
 }
 
@@ -66,6 +67,16 @@ export function getCategoriesWithCounts(): {
   })).filter(({ count }) => count > 0);
 }
 
+export function getPaidResources(): Resource[] {
+  return getAllResources().filter((resource) => resource.free === false);
+}
+
+export function getPaidBooks(): Resource[] {
+  return getAllResources().filter(
+    (resource) => resource.category === "book" && resource.free === false,
+  );
+}
+
 export function getRecentResources(limit = 10): Resource[] {
   return [...getAllResources()]
     .filter((resource) => resource.addedAt)
@@ -111,6 +122,9 @@ export function filterResources(
       return false;
     }
     if (filters.freeOnly && !resource.free) {
+      return false;
+    }
+    if (filters.paidOnly && resource.free !== false) {
       return false;
     }
     return true;
