@@ -29,6 +29,13 @@ export function StarterKitCard({ kit }: StarterKitCardProps) {
                   >
                     {step.title}
                   </Link>
+                ) : step.url?.startsWith("/") ? (
+                  <Link
+                    href={step.url}
+                    className="hover:text-rust dark:hover:text-rust-light"
+                  >
+                    {step.title}
+                  </Link>
                 ) : (
                   <a
                     href={step.url}

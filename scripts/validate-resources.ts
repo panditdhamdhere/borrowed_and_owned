@@ -41,6 +41,24 @@ const pathSchema = z.object({
   resourceIds: z.array(z.string().min(1)).min(1),
 });
 
+const starterKitStepSchema = z
+  .object({
+    title: z.string().min(1),
+    description: z.string().min(10),
+    resourceId: z.string().min(1).optional(),
+    url: z.string().min(1).optional(),
+  })
+  .refine((step) => step.resourceId ?? step.url, {
+    message: "step must have resourceId or url",
+  });
+
+const starterKitSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(10),
+  steps: z.array(starterKitStepSchema).min(1),
+});
+
 function loadJson<T>(filePath: string): T {
   return JSON.parse(readFileSync(resolve(filePath), "utf8")) as T;
 }
@@ -48,6 +66,9 @@ function loadJson<T>(filePath: string): T {
 function validateResources() {
   const resources = loadJson<unknown[]>("src/content/resources.json");
   const paths = loadJson<{ resourceIds: string[] }[]>("src/content/paths.json");
+  const starterKits = loadJson<{ id: string; steps: { resourceId?: string }[] }[]>(
+    "src/content/starter-kits.json",
+  );
 
   const ids = new Set<string>();
   let errors = 0;
@@ -85,12 +106,32 @@ function validateResources() {
     }
   }
 
+  for (const [index, item] of starterKits.entries()) {
+    const result = starterKitSchema.safeParse(item);
+    if (!result.success) {
+      console.error(`Starter kit [${index}]:`, result.error.flatten().fieldErrors);
+      errors++;
+      continue;
+    }
+
+    for (const step of result.data.steps) {
+      if (step.resourceId && !ids.has(step.resourceId)) {
+        console.error(
+          `Starter kit "${result.data.id}" references missing resource: ${step.resourceId}`,
+        );
+        errors++;
+      }
+    }
+  }
+
   if (errors > 0) {
     console.error(`\nValidation failed with ${errors} error(s).`);
     process.exit(1);
   }
 
-  console.log(`Validated ${resources.length} resources and ${paths.length} paths.`);
+  console.log(
+    `Validated ${resources.length} resources, ${paths.length} paths, and ${starterKits.length} starter kits.`,
+  );
 }
 
 validateResources();

@@ -52,5 +52,128 @@
         "resourceId": "rust-users-forum"
       }
     ]
+  },
+  {
+    "id": "first-cli-tool",
+    "title": "First CLI Tool",
+    "description": "Build a real command-line program with Cargo — from project layout to parsing args and handling errors.",
+    "steps": [
+      {
+        "title": "Learn Cargo workflows",
+        "description": "Understand projects, dependencies, tests, and `cargo run` before writing your tool.",
+        "resourceId": "cargo-book"
+      },
+      {
+        "title": "Clone the Command-Line Rust repo",
+        "description": "Follow along with Ken Youens-Clark's project-based guide — each chapter builds a Unix-style tool.",
+        "resourceId": "command-line-rust"
+      },
+      {
+        "title": "Build your first subcommand",
+        "description": "Start with a small `grep`- or `wc`-style binary using clap for argument parsing.",
+        "url": "https://github.com/kyclark/command-line-rust/tree/main/01_hello"
+      },
+      {
+        "title": "Run Clippy before you ship",
+        "description": "Catch unidiomatic patterns early — essential habit for any CLI you share or open-source.",
+        "resourceId": "rust-clippy"
+      }
+    ]
+  },
+  {
+    "id": "first-web-api",
+    "title": "First Web API",
+    "description": "Go from async basics to a production-ready HTTP service with Axum and real-world deployment patterns.",
+    "steps": [
+      {
+        "title": "Read the Async Book",
+        "description": "Grasp futures, async/await, and Tokio fundamentals before building an API.",
+        "resourceId": "async-book"
+      },
+      {
+        "title": "Explore the Axum framework",
+        "description": "Build routes, extractors, and JSON handlers — the modern Rust web stack.",
+        "resourceId": "axum"
+      },
+      {
+        "title": "Follow the Tokio tutorial",
+        "description": "Practice spawning tasks and async I/O that Axum builds on.",
+        "resourceId": "tokio-tutorial"
+      },
+      {
+        "title": "Study Zero to Production",
+        "description": "Learn testing, configuration, observability, and deployment for a service you'd run in prod.",
+        "resourceId": "zero-to-production"
+      }
+    ]
+  },
+  {
+    "id": "interview-week",
+    "title": "Interview Week",
+    "description": "A focused seven-day plan to sharpen fundamentals, practice problems, and tricky Rust semantics before interviews.",
+    "steps": [
+      {
+        "title": "Review ownership and lifetimes",
+        "description": "Re-read The Rust Book chapters 4–10 — the core of most Rust interview questions.",
+        "resourceId": "the-rust-book"
+      },
+      {
+        "title": "Solve Exercism Rust exercises",
+        "description": "Practice writing idiomatic solutions with mentor feedback on each submission.",
+        "resourceId": "exercism-rust"
+      },
+      {
+        "title": "Take the Rust Quiz",
+        "description": "Test yourself on surprising ownership, lifetime, and type-system edge cases.",
+        "resourceId": "rust-quiz"
+      },
+      {
+        "title": "Work through interview Q&A",
+        "description": "100 coding problems and 120 theoretical questions covering traits, async, and more.",
+        "resourceId": "rust-interview-questions"
+      },
+      {
+        "title": "Try Rust Brain Teasers",
+        "description": "Short puzzles that expose gaps in your mental model — great last-minute prep.",
+        "resourceId": "rust-brain-teasers"
+      },
+      {
+        "title": "Follow the full Interview Prep path",
+        "description": "See all curated resources in order — including Crust of Rust and reading production code.",
+        "url": "/paths/interview-prep"
+      }
+    ]
+  },
+  {
+    "id": "contributing-to-oss",
+    "title": "Contributing to OSS",
+    "description": "Learn to read real Rust codebases, navigate tooling, and find your first meaningful open-source contribution.",
+    "steps": [
+      {
+        "title": "Set up rust-analyzer",
+        "description": "Go-to-definition, inline types, and diagnostics make reading unfamiliar code much faster.",
+        "resourceId": "rust-analyzer"
+      },
+      {
+        "title": "Clone and explore ripgrep",
+        "description": "A well-structured, widely admired codebase — start with `cargo build` and read `main.rs`.",
+        "resourceId": "ripgrep"
+      },
+      {
+        "title": "Watch Crust of Rust",
+        "description": "Jon Gjengset walks through real code — lifetimes, iterators, and patterns you'll see in the wild.",
+        "resourceId": "crust-of-rust"
+      },
+      {
+        "title": "Study Rust design patterns",
+        "description": "Recognize idioms in the code you read — builders, newtypes, RAII, and error handling.",
+        "resourceId": "rust-design-patterns"
+      },
+      {
+        "title": "Pick a good first issue",
+        "description": "Filter rust-analyzer or ripgrep issues labeled `good first issue` or `E-easy` and ask on Discord if stuck.",
+        "resourceId": "rust-discord"
+      }
+    ]
   }
 ]
