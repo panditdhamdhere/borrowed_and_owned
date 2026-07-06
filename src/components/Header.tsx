@@ -6,6 +6,7 @@ import { RustCrab } from "./RustCrab";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
+  { href: "/start", label: "Find your path" },
   { href: "/paths", label: "Paths" },
   { href: "/starter-kits", label: "Starter Kits" },
   { href: "/changelog", label: "Changelog" },

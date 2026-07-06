@@ -33,14 +33,20 @@ export default async function Home() {
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
               Books, videos, courses, open source repos, and more — all in one
-              place. Follow a learning path or browse everything below.
+              place. Not sure where to begin? Start with a personalized plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/start"
+                className="rounded-lg bg-rust px-4 py-2 text-sm font-medium text-white hover:bg-rust-light transition-colors"
+              >
+                Find your path
+              </Link>
               <a
                 href={siteConfig.githubSubmitUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-rust px-4 py-2 text-sm font-medium text-white hover:bg-rust-light transition-colors"
+                className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:border-rust/50 dark:border-zinc-700 dark:text-zinc-300"
               >
                 Submit a resource
               </a>
@@ -103,9 +109,12 @@ export default async function Home() {
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
           All resources
         </h2>
+        <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+          Or browse the full catalog — search, filter, and sort everything below.
+        </p>
         <ResourceFilters resources={resources} starsMap={starsMap} />
       </section>
     </PageShell>

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "absolute-beginner",
+    "title": "Learn Rust from scratch",
+    "description": "Never written Rust before? Start with the official book, exercises, and community support.",
+    "pathId": "absolute-beginner",
+    "starterKits": {
+      "none": "day-one-setup",
+      "some": "first-week",
+      "comfortable": "first-week"
+    }
+  },
+  {
+    "id": "web-api",
+    "title": "Build web APIs & services",
+    "description": "Learn async Rust, HTTP handlers, and production-ready backend patterns.",
+    "pathId": "web-development",
+    "starterKits": {
+      "none": "day-one-setup",
+      "some": "first-web-api",
+      "comfortable": "first-web-api"
+    }
+  },
+  {
+    "id": "systems",
+    "title": "Systems, embedded & OS",
+    "description": "Kernels, bare metal, embedded Rust, and low-level programming.",
+    "pathId": "systems-and-os",
+    "starterKits": {
+      "none": "day-one-setup",
+      "some": "first-week",
+      "comfortable": null
+    }
+  },
+  {
+    "id": "interview-prep",
+    "title": "Prepare for interviews",
+    "description": "Fundamentals, practice problems, tricky puzzles, and reading production code.",
+    "pathId": "interview-prep",
+    "starterKits": {
+      "none": "first-week",
+      "some": "interview-week",
+      "comfortable": "interview-week"
+    }
+  },
+  {
+    "id": "open-source",
+    "title": "Contribute to open source",
+    "description": "Read real codebases, learn idioms, and find your first meaningful PR.",
+    "pathId": "job-ready",
+    "starterKits": {
+      "none": "first-week",
+      "some": "contributing-to-oss",
+      "comfortable": "contributing-to-oss"
+    }
+  },
+  {
+    "id": "job-ready",
+    "title": "Get job-ready",
+    "description": "Idiomatic Rust, production patterns, and deep dives for hireable engineers.",
+    "pathId": "job-ready",
+    "starterKits": {
+      "none": "first-week",
+      "some": "contributing-to-oss",
+      "comfortable": "contributing-to-oss"
+    }
+  }
+]

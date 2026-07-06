@@ -59,6 +59,18 @@ const starterKitSchema = z.object({
   steps: z.array(starterKitStepSchema).min(1),
 });
 
+const learningGoalSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(10),
+  pathId: z.string().min(1),
+  starterKits: z.object({
+    none: z.string().nullable().optional(),
+    some: z.string().nullable().optional(),
+    comfortable: z.string().nullable().optional(),
+  }),
+});
+
 function loadJson<T>(filePath: string): T {
   return JSON.parse(readFileSync(resolve(filePath), "utf8")) as T;
 }
@@ -69,8 +81,13 @@ function validateResources() {
   const starterKits = loadJson<{ id: string; steps: { resourceId?: string }[] }[]>(
     "src/content/starter-kits.json",
   );
+  const learningGoals = loadJson<
+    { id: string; pathId: string; starterKits: Record<string, string | null> }[]
+  >("src/content/learning-goals.json");
 
   const ids = new Set<string>();
+  const pathIds = new Set<string>();
+  const starterKitIds = new Set<string>();
   let errors = 0;
 
   for (const [index, item] of resources.entries()) {
@@ -104,6 +121,8 @@ function validateResources() {
         errors++;
       }
     }
+
+    pathIds.add(result.data.id);
   }
 
   for (const [index, item] of starterKits.entries()) {
@@ -122,6 +141,33 @@ function validateResources() {
         errors++;
       }
     }
+
+    starterKitIds.add(result.data.id);
+  }
+
+  for (const [index, item] of learningGoals.entries()) {
+    const result = learningGoalSchema.safeParse(item);
+    if (!result.success) {
+      console.error(`Learning goal [${index}]:`, result.error.flatten().fieldErrors);
+      errors++;
+      continue;
+    }
+
+    if (!pathIds.has(result.data.pathId)) {
+      console.error(
+        `Learning goal "${result.data.id}" references missing path: ${result.data.pathId}`,
+      );
+      errors++;
+    }
+
+    for (const [level, kitId] of Object.entries(result.data.starterKits)) {
+      if (kitId && !starterKitIds.has(kitId)) {
+        console.error(
+          `Learning goal "${result.data.id}" references missing starter kit (${level}): ${kitId}`,
+        );
+        errors++;
+      }
+    }
   }
 
   if (errors > 0) {
@@ -130,7 +176,7 @@ function validateResources() {
   }
 
   console.log(
-    `Validated ${resources.length} resources, ${paths.length} paths, and ${starterKits.length} starter kits.`,
+    `Validated ${resources.length} resources, ${paths.length} paths, ${starterKits.length} starter kits, and ${learningGoals.length} learning goals.`,
   );
 }
 

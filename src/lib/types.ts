@@ -55,6 +55,30 @@ export interface StarterKit {
   steps: StarterKitStep[];
 }
 
+export const EXPERIENCE_LEVELS = ["none", "some", "comfortable"] as const;
+
+export type ExperienceLevel = (typeof EXPERIENCE_LEVELS)[number];
+
+export interface LearningGoal {
+  id: string;
+  title: string;
+  description: string;
+  pathId: string;
+  starterKits: Partial<Record<ExperienceLevel, string | null>>;
+}
+
+export const EXPERIENCE_LABELS: Record<ExperienceLevel, string> = {
+  none: "Brand new to Rust",
+  some: "Some exposure",
+  comfortable: "Already comfortable",
+};
+
+export const EXPERIENCE_DESCRIPTIONS: Record<ExperienceLevel, string> = {
+  none: "Haven't written Rust yet — we'll start from setup.",
+  some: "Read a bit or know another language — skip the basics where you can.",
+  comfortable: "Written Rust before — jump straight into the curated path.",
+};
+
 export const CATEGORY_LABELS: Record<ResourceCategory, string> = {
   book: "Books",
   video: "Videos",

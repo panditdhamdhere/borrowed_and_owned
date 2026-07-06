@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllLearningGoals } from "@/lib/learning-goals";
 import { getAllPaths } from "@/lib/paths";
 import {
   getAllResources,
@@ -13,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    {
+      url: `${baseUrl}/start`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
     {
       url: `${baseUrl}/paths`,
       lastModified: now,
@@ -67,11 +74,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const startGoalRoutes = getAllLearningGoals().map((goal) => ({
+    url: `${baseUrl}/start/${goal.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...resourceRoutes,
     ...tagRoutes,
     ...pathRoutes,
+    ...startGoalRoutes,
   ];
 }
