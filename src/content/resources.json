@@ -1,5 +1,20 @@
 [
   {
+    "id": "rust-patterns-and-engineering-how-tos",
+    "title": "Rust Patterns & Engineering How-Tos",
+    "description": "A practical guide to intermediate-and-above Rust patterns that arise in real codebases.",
+    "url": "https://microsoft.github.io/RustTraining/rust-patterns-book/",
+    "category": "book",
+    "level": "intermediate",
+    "tags": [
+      "official",
+      "free"
+    ],
+    "free": true,
+    "author": "microsoft",
+    "addedAt": "2025-07-11"
+  },
+  {
     "id": "the-rust-book",
     "title": "The Rust Programming Language",
     "description": "The official book — the best starting point for learning Rust from scratch.",
