@@ -15,3 +15,7 @@ export function getPathResources(path: LearningPath): Resource[] {
     .map((id) => getResourceById(id))
     .filter((resource): resource is Resource => resource !== undefined);
 }
+
+export function getPathsForResource(resourceId: string): LearningPath[] {
+  return getAllPaths().filter((path) => path.resourceIds.includes(resourceId));
+}

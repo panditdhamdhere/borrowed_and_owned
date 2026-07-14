@@ -14,7 +14,7 @@ export const RESOURCE_CATEGORIES = [
 
 export const RESOURCE_LEVELS = ["beginner", "intermediate", "advanced"] as const;
 
-export const SORT_OPTIONS = ["recent", "alpha", "level"] as const;
+export const SORT_OPTIONS = ["recent", "alpha", "level", "stars"] as const;
 
 export type ResourceCategory = (typeof RESOURCE_CATEGORIES)[number];
 export type ResourceLevel = (typeof RESOURCE_LEVELS)[number];
@@ -103,4 +103,5 @@ export const SORT_LABELS: Record<SortOption, string> = {
   recent: "Recently added",
   alpha: "A → Z",
   level: "Beginner first",
+  stars: "Most GitHub stars",
 };

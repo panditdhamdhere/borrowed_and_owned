@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { CATEGORY_LABELS, type Resource } from "@/lib/types";
+import { ResourceBadges } from "@/components/ResourceBadges";
+import type { Resource } from "@/lib/types";
 
 interface ResourceCardProps {
   resource: Resource;
@@ -9,28 +10,8 @@ interface ResourceCardProps {
 export function ResourceCard({ resource, stars }: ResourceCardProps) {
   return (
     <article className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-5 transition-colors hover:border-rust/40 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:bg-zinc-900">
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <Link
-          href={`/category/${resource.category}`}
-          className="rounded-full bg-rust/15 px-2.5 py-0.5 text-xs font-medium text-rust hover:bg-rust/25 dark:text-rust-light"
-        >
-          {CATEGORY_LABELS[resource.category]}
-        </Link>
-        {resource.level && (
-          <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 capitalize dark:bg-zinc-800 dark:text-zinc-400">
-            {resource.level}
-          </span>
-        )}
-        {resource.free && (
-          <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400">
-            Free
-          </span>
-        )}
-        {stars !== undefined && (
-          <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-            ★ {stars.toLocaleString()}
-          </span>
-        )}
+      <div className="mb-3">
+        <ResourceBadges resource={resource} stars={stars} />
       </div>
 
       <h3 className="mb-1 text-lg font-semibold text-zinc-900 group-hover:text-rust transition-colors dark:text-zinc-50 dark:group-hover:text-rust-light">

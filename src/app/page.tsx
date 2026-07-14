@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { FeaturedResource } from "@/components/FeaturedResource";
 import { LearningPathCard } from "@/components/LearningPathCard";
 import { PageShell } from "@/components/PageShell";
 import { ResourceFilters } from "@/components/ResourceFilters";
 import { RustCrab } from "@/components/RustCrab";
 import { getAllPaths, getPathResources } from "@/lib/paths";
-import { getAllResources, getCategoriesWithCounts, getPaidBooks } from "@/lib/resources";
+import { getAllResources, getCategoriesWithCounts, getFeaturedResource, getPaidBooks } from "@/lib/resources";
 import { fetchRepoStarsMap } from "@/lib/repo-stars";
 import { siteConfig } from "@/lib/site";
 
@@ -13,7 +14,9 @@ export default async function Home() {
   const categories = getCategoriesWithCounts();
   const paidBooks = getPaidBooks();
   const paths = getAllPaths();
+  const featured = getFeaturedResource();
   const starsMap = await fetchRepoStarsMap(resources);
+  const featuredStars = featured ? starsMap[featured.id] : undefined;
 
   return (
     <PageShell>
@@ -84,6 +87,10 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      {featured && (
+        <FeaturedResource resource={featured} stars={featuredStars} />
+      )}
 
       <section className="mb-12">
         <div className="mb-6 flex items-center justify-between">

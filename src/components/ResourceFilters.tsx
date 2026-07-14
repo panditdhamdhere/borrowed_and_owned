@@ -52,8 +52,8 @@ export function ResourceFilters({
         freeOnly,
         paidOnly,
         sort,
-      }),
-    [resources, query, category, level, freeOnly, paidOnly, sort],
+      }, starsMap),
+    [resources, query, category, level, freeOnly, paidOnly, sort, starsMap],
   );
 
   const categoryCounts = useMemo(() => {

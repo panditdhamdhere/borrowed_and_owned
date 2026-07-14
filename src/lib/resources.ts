@@ -87,7 +87,33 @@ export function getRecentResources(limit = 10): Resource[] {
     .slice(0, limit);
 }
 
-function sortResources(items: Resource[], sort: SortOption): Resource[] {
+function getWeekOfYear(date: Date): number {
+  const start = new Date(date.getFullYear(), 0, 1);
+  const diff = date.getTime() - start.getTime();
+  return Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
+}
+
+export function getFeaturedResource(): Resource | undefined {
+  const candidates = [...getAllResources()]
+    .filter((resource) => resource.addedAt)
+    .sort(
+      (a, b) =>
+        new Date(b.addedAt!).getTime() - new Date(a.addedAt!).getTime(),
+    );
+
+  if (candidates.length === 0) {
+    return getAllResources()[0];
+  }
+
+  const index = getWeekOfYear(new Date()) % candidates.length;
+  return candidates[index];
+}
+
+function sortResources(
+  items: Resource[],
+  sort: SortOption,
+  starsMap: Record<string, number> = {},
+): Resource[] {
   const sorted = [...items];
 
   switch (sort) {
@@ -105,6 +131,12 @@ function sortResources(items: Resource[], sort: SortOption): Resource[] {
           new Date(b.addedAt ?? 0).getTime() -
           new Date(a.addedAt ?? 0).getTime(),
       );
+    case "stars":
+      return sorted.sort(
+        (a, b) =>
+          (starsMap[b.id] ?? 0) - (starsMap[a.id] ?? 0) ||
+          a.title.localeCompare(b.title),
+      );
     default:
       return sorted;
   }
@@ -113,6 +145,7 @@ function sortResources(items: Resource[], sort: SortOption): Resource[] {
 export function filterResources(
   items: Resource[],
   filters: ResourceFilters,
+  starsMap: Record<string, number> = {},
 ): Resource[] {
   let result = items.filter((resource) => {
     if (filters.category !== "all" && resource.category !== filters.category) {
@@ -139,7 +172,7 @@ export function filterResources(
     result = fuse.search(query).map((match) => match.item);
   }
 
-  return sortResources(result, filters.sort);
+  return sortResources(result, filters.sort, starsMap);
 }
 
 export function getRelatedResources(resource: Resource, limit = 3): Resource[] {

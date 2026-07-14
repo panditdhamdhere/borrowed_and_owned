@@ -9,13 +9,14 @@ import {
   getResourceEditUrl,
   getResourceSearchUrl,
 } from "@/lib/resource-meta";
+import { getPathsForResource } from "@/lib/paths";
 import {
   getAllResources,
   getRelatedResources,
   getResourceById,
 } from "@/lib/resources";
 import { fetchRepoStarsMap } from "@/lib/repo-stars";
-import { CATEGORY_LABELS } from "@/lib/types";
+import { ResourceBadges } from "@/components/ResourceBadges";
 
 interface ResourcePageProps {
   params: Promise<{ id: string }>;
@@ -43,6 +44,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
   }
 
   const related = getRelatedResources(resource);
+  const memberPaths = getPathsForResource(resource.id);
   const stars =
     resource.category === "repo"
       ? await fetchGitHubStars(resource.url)
@@ -57,28 +59,12 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="mb-6 flex flex-wrap items-center gap-2">
-        <Link
-          href={`/category/${resource.category}`}
-          className="rounded-full bg-rust/15 px-2.5 py-0.5 text-xs font-medium text-rust dark:text-rust-light"
-        >
-          {CATEGORY_LABELS[resource.category]}
-        </Link>
-        {resource.level && (
-          <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs capitalize text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-            {resource.level}
-          </span>
-        )}
-        {resource.free && (
-          <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400">
-            Free
-          </span>
-        )}
-        {stars !== undefined && (
-          <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-            ★ {stars.toLocaleString()} GitHub stars
-          </span>
-        )}
+      <div className="mb-6">
+        <ResourceBadges
+          resource={resource}
+          stars={stars}
+          starsSuffix="GitHub stars"
+        />
       </div>
 
       <h1 className="mb-2 text-4xl font-bold text-zinc-900 dark:text-zinc-50">
@@ -102,6 +88,25 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
               #{tag}
             </Link>
           ))}
+        </div>
+      )}
+
+      {memberPaths.length > 0 && (
+        <div className="mb-8">
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+            Part of these learning paths
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {memberPaths.map((path) => (
+              <Link
+                key={path.id}
+                href={`/paths/${path.id}`}
+                className="rounded-full border border-rust/30 bg-rust/5 px-3 py-1.5 text-sm font-medium text-rust transition-colors hover:border-rust/50 dark:border-rust/40 dark:bg-rust/10 dark:text-rust-light"
+              >
+                {path.title}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
