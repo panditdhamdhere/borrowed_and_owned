@@ -1,64 +1,61 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { LearningPlan } from "@/lib/learning-goals";
+import { ProgressStepList } from "@/components/ProgressStepList";
+import { useProgress } from "@/hooks/useProgress";
+import {
+  countCompleted,
+  kitProgressKey,
+  pathProgressKey,
+  writeActivePlan,
+} from "@/lib/learning-progress";
+import { buildKitSteps, buildPathSteps } from "@/lib/learning-steps";
 import { EXPERIENCE_LABELS } from "@/lib/types";
 
 interface LearningPlanViewProps {
   plan: LearningPlan;
 }
 
-function readProgress(storageKey: string): Record<string, boolean> {
-  if (typeof window === "undefined") return {};
-
-  try {
-    const saved = localStorage.getItem(storageKey);
-    return saved ? (JSON.parse(saved) as Record<string, boolean>) : {};
-  } catch {
-    return {};
-  }
-}
-
 export function LearningPlanView({ plan }: LearningPlanViewProps) {
-  const storageKey = `learning-plan:${plan.goal.id}:${plan.experience}`;
-  const [completed, setCompleted] = useState<Record<string, boolean>>(() =>
-    readProgress(storageKey),
-  );
+  const kitKey = plan.starterKit ? kitProgressKey(plan.starterKit.id) : null;
+  const pathKey = pathProgressKey(plan.path.id);
 
-  function toggleStep(stepId: string) {
-    setCompleted((current) => {
-      const next = { ...current, [stepId]: !current[stepId] };
-      localStorage.setItem(storageKey, JSON.stringify(next));
-      return next;
+  const kitProgress = useProgress(kitKey ?? "learning-kit:unused");
+  const pathProgress = useProgress(pathKey);
+
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    writeActivePlan({
+      goalId: plan.goal.id,
+      experience: plan.experience,
     });
-  }
+  }, [plan.goal.id, plan.experience]);
 
-  const starterSteps =
-    plan.starterKit?.steps.map((step, index) => ({
-      id: `kit-${index}`,
-      title: step.title,
-      description: step.description,
-      href: step.resourceId
-        ? `/resource/${step.resourceId}`
-        : step.url?.startsWith("/")
-          ? step.url
-          : step.url,
-      external: Boolean(step.url && !step.url.startsWith("/")),
-    })) ?? [];
+  const starterSteps = plan.starterKit ? buildKitSteps(plan.starterKit) : [];
+  const pathSteps = buildPathSteps(plan.pathResources);
 
-  const pathSteps = plan.pathResources.map((resource) => ({
-    id: `path-${resource.id}`,
-    title: resource.title,
-    description: resource.description,
-    href: `/resource/${resource.id}`,
-    external: false,
-  }));
-
+  const kitDone = kitKey
+    ? countCompleted(
+        kitProgress.completed,
+        starterSteps.map((step) => step.id),
+      )
+    : 0;
+  const pathDone = countCompleted(
+    pathProgress.completed,
+    pathSteps.map((step) => step.id),
+  );
   const totalSteps = starterSteps.length + pathSteps.length;
-  const doneCount = [...starterSteps, ...pathSteps].filter(
-    (step) => completed[step.id],
-  ).length;
+  const doneCount = kitDone + pathDone;
+
+  async function copyPlanLink() {
+    const url = `${window.location.origin}/start/${plan.goal.id}?experience=${plan.experience}`;
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <div className="space-y-10">
@@ -90,35 +87,64 @@ export function LearningPlanView({ plan }: LearningPlanViewProps) {
             Progress: {doneCount} of {totalSteps} steps completed
           </p>
         )}
+        <div className="mt-4 flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={copyPlanLink}
+            className="rounded-lg border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-rust/50 dark:border-zinc-700 dark:text-zinc-300"
+          >
+            {copied ? "Link copied!" : "Copy plan link"}
+          </button>
+          <Link
+            href="/my-learning"
+            className="rounded-lg border border-zinc-300 px-3 py-1.5 text-sm text-zinc-700 hover:border-rust/50 dark:border-zinc-700 dark:text-zinc-300"
+          >
+            My learning →
+          </Link>
+        </div>
       </div>
 
-      {plan.starterKit && (
-        <PlanSection
-          title="Start here"
-          subtitle={plan.starterKit.title}
-          description={plan.starterKit.description}
-          steps={starterSteps}
-          completed={completed}
-          onToggle={toggleStep}
-        />
+      {plan.starterKit && kitKey && (
+        <section>
+          <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
+            Start here
+          </p>
+          <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            {plan.starterKit.title}
+          </h2>
+          <p className="mb-6 max-w-2xl text-zinc-600 dark:text-zinc-400">
+            {plan.starterKit.description}
+          </p>
+          <ProgressStepList
+            steps={starterSteps}
+            completed={kitProgress.completed}
+            onToggle={kitProgress.toggleStep}
+          />
+        </section>
       )}
 
-      <PlanSection
-        title="Learning path"
-        subtitle={plan.path.title}
-        description={plan.path.description}
-        steps={pathSteps}
-        completed={completed}
-        onToggle={toggleStep}
-        footer={
-          <Link
-            href={`/paths/${plan.path.id}`}
-            className="text-sm text-rust hover:text-rust-light"
-          >
-            View full path →
-          </Link>
-        }
-      />
+      <section>
+        <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
+          Learning path
+        </p>
+        <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          {plan.path.title}
+        </h2>
+        <p className="mb-6 max-w-2xl text-zinc-600 dark:text-zinc-400">
+          {plan.path.description}
+        </p>
+        <ProgressStepList
+          steps={pathSteps}
+          completed={pathProgress.completed}
+          onToggle={pathProgress.toggleStep}
+        />
+        <Link
+          href={`/paths/${plan.path.id}`}
+          className="mt-4 inline-block text-sm text-rust hover:text-rust-light"
+        >
+          View full path →
+        </Link>
+      </section>
 
       <div className="flex flex-wrap gap-3 border-t border-zinc-200 pt-8 dark:border-zinc-800">
         <Link
@@ -135,110 +161,5 @@ export function LearningPlanView({ plan }: LearningPlanViewProps) {
         </Link>
       </div>
     </div>
-  );
-}
-
-function PlanSection({
-  title,
-  subtitle,
-  description,
-  steps,
-  completed,
-  onToggle,
-  footer,
-}: {
-  title: string;
-  subtitle: string;
-  description: string;
-  steps: {
-    id: string;
-    title: string;
-    description: string;
-    href?: string;
-    external?: boolean;
-  }[];
-  completed: Record<string, boolean>;
-  onToggle: (id: string) => void;
-  footer?: React.ReactNode;
-}) {
-  return (
-    <section>
-      <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
-        {title}
-      </p>
-      <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
-        {subtitle}
-      </h2>
-      <p className="mb-6 max-w-2xl text-zinc-600 dark:text-zinc-400">
-        {description}
-      </p>
-      <ol className="space-y-3">
-        {steps.map((step, index) => (
-          <li
-            key={step.id}
-            className="flex items-start gap-4 rounded-xl border border-zinc-200 bg-white px-4 py-4 dark:border-zinc-800 dark:bg-zinc-900/50"
-          >
-            <button
-              type="button"
-              onClick={() => onToggle(step.id)}
-              aria-label={`Mark step ${index + 1} complete`}
-              className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-colors ${
-                completed[step.id]
-                  ? "border-rust bg-rust text-white"
-                  : "border-zinc-300 hover:border-rust/50 dark:border-zinc-700"
-              }`}
-            >
-              {completed[step.id] && (
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={3}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              )}
-            </button>
-            <div className="min-w-0 flex-1">
-              <p className="font-medium text-zinc-900 dark:text-zinc-100">
-                {step.href ? (
-                  step.external ? (
-                    <a
-                      href={step.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-rust dark:hover:text-rust-light"
-                    >
-                      {step.title} ↗
-                    </a>
-                  ) : (
-                    <Link
-                      href={step.href}
-                      className="hover:text-rust dark:hover:text-rust-light"
-                    >
-                      {step.title}
-                    </Link>
-                  )
-                ) : (
-                  step.title
-                )}
-              </p>
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                {step.description}
-              </p>
-            </div>
-            <span className="hidden shrink-0 text-sm text-zinc-400 sm:inline">
-              {index + 1}
-            </span>
-          </li>
-        ))}
-      </ol>
-      {footer && <div className="mt-4">{footer}</div>}
-    </section>
   );
 }

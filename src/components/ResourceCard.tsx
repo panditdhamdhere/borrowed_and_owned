@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import { ResourceBadges } from "@/components/ResourceBadges";
 import type { Resource } from "@/lib/types";
 
@@ -56,6 +57,7 @@ export function ResourceCard({ resource, stars }: ResourceCardProps) {
         >
           Visit ↗
         </a>
+        <BookmarkButton resourceId={resource.id} compact />
       </div>
     </article>
   );

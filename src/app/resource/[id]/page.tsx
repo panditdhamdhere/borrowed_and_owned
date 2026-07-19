@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import { PageShell } from "@/components/PageShell";
 import { ResourceCard } from "@/components/ResourceCard";
 import { fetchGitHubStars } from "@/lib/github-stars";
@@ -135,6 +136,13 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
         >
           Find &quot;{resource.id}&quot;
         </a>
+        <BookmarkButton resourceId={resource.id} />
+        <Link
+          href="/my-learning"
+          className="rounded-lg border border-zinc-300 px-5 py-2.5 text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"
+        >
+          My learning
+        </Link>
         <Link
           href="/"
           className="rounded-lg border border-zinc-300 px-5 py-2.5 text-zinc-700 dark:border-zinc-700 dark:text-zinc-300"

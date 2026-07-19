@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContinueLearningBanner } from "@/components/ContinueLearningBanner";
 import { FeaturedResource } from "@/components/FeaturedResource";
 import { LearningPathCard } from "@/components/LearningPathCard";
 import { PageShell } from "@/components/PageShell";
@@ -20,6 +21,7 @@ export default async function Home() {
 
   return (
     <PageShell>
+      <ContinueLearningBanner />
       <section className="mb-12">
         <div className="mb-6 flex items-start gap-6">
           <RustCrab

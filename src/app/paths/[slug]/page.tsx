@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { PathProgressSection } from "@/components/PathProgressSection";
 import { PageShell } from "@/components/PageShell";
 import { ResourceCard } from "@/components/ResourceCard";
 import { getAllPaths, getPathById, getPathResources } from "@/lib/paths";
@@ -54,27 +55,7 @@ export default async function PathPage({ params }: PathPageProps) {
         {path.description}
       </p>
 
-      <ol className="mb-8 space-y-3">
-        {resources.map((resource, index) => (
-          <li
-            key={resource.id}
-            className="flex items-center gap-4 rounded-lg border border-zinc-200 bg-white px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900/50"
-          >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rust/15 text-sm font-bold text-rust dark:text-rust-light">
-              {index + 1}
-            </span>
-            <div className="flex-1">
-              <Link
-                href={`/resource/${resource.id}`}
-                className="font-medium text-zinc-900 hover:text-rust dark:text-zinc-100 dark:hover:text-rust-light"
-              >
-                {resource.title}
-              </Link>
-              <p className="text-sm text-zinc-500">{resource.description}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <PathProgressSection path={path} resources={resources} />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (

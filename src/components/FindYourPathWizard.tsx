@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { getAllLearningGoals } from "@/lib/learning-goals";
+import { writeActivePlan } from "@/lib/learning-progress";
 import {
   EXPERIENCE_DESCRIPTIONS,
   EXPERIENCE_LABELS,
@@ -23,6 +24,7 @@ export function FindYourPathWizard() {
 
   function handleContinue() {
     if (!goalId) return;
+    writeActivePlan({ goalId, experience });
     router.push(`/start/${goalId}?experience=${experience}`);
   }
 

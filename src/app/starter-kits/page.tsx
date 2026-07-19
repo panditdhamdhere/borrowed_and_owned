@@ -1,5 +1,5 @@
 import { PageShell } from "@/components/PageShell";
-import { StarterKitCard } from "@/components/StarterKitCard";
+import { StarterKitProgressCard } from "@/components/StarterKitProgressCard";
 import { getAllStarterKits } from "@/lib/starter-kits";
 
 export default function StarterKitsPage() {
@@ -16,7 +16,7 @@ export default function StarterKitsPage() {
       </p>
       <div className="grid gap-6 lg:grid-cols-2">
         {kits.map((kit) => (
-          <StarterKitCard key={kit.id} kit={kit} />
+          <StarterKitProgressCard key={kit.id} kit={kit} />
         ))}
       </div>
     </PageShell>
