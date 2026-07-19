@@ -106,3 +106,38 @@ export function emitProgressChange(): void {
   if (typeof window === "undefined") return;
   window.dispatchEvent(new Event(PROGRESS_CHANGE_EVENT));
 }
+
+export const EMPTY_PROGRESS: Record<string, boolean> = {};
+
+export function createCachedSnapshot<T>(
+  compute: () => T,
+  serialize: (value: T) => string = JSON.stringify,
+): () => T {
+  let cached: T | undefined;
+  let cachedKey = "";
+
+  return () => {
+    const value = compute();
+    const key = serialize(value);
+    if (cached !== undefined && key === cachedKey) {
+      return cached;
+    }
+    cachedKey = key;
+    cached = value;
+    return value;
+  };
+}
+
+const progressSnapshotGetters = new Map<
+  string,
+  () => Record<string, boolean>
+>();
+
+export function getProgressSnapshot(key: string): Record<string, boolean> {
+  let getter = progressSnapshotGetters.get(key);
+  if (!getter) {
+    getter = createCachedSnapshot(() => readProgress(key));
+    progressSnapshotGetters.set(key, getter);
+  }
+  return getter();
+}

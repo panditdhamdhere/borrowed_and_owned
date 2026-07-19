@@ -2,8 +2,9 @@
 
 import { useSyncExternalStore } from "react";
 import {
+  EMPTY_PROGRESS,
+  getProgressSnapshot,
   PROGRESS_CHANGE_EVENT,
-  readProgress,
   toggleProgressStep,
 } from "@/lib/learning-progress";
 
@@ -15,8 +16,8 @@ function subscribe(callback: () => void) {
 export function useProgress(storageKey: string) {
   const completed = useSyncExternalStore(
     subscribe,
-    () => readProgress(storageKey),
-    () => ({}),
+    () => getProgressSnapshot(storageKey),
+    () => EMPTY_PROGRESS,
   );
 
   function toggleStep(stepId: string) {

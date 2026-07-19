@@ -6,6 +6,7 @@ import { ResourceCard } from "@/components/ResourceCard";
 import { buildLearningPlan } from "@/lib/learning-goals";
 import {
   countCompleted,
+  createCachedSnapshot,
   kitProgressKey,
   pathProgressKey,
   readActivePlan,
@@ -16,7 +17,18 @@ import {
 import { buildKitSteps, buildPathSteps } from "@/lib/learning-steps";
 import { getAllPaths, getPathResources } from "@/lib/paths";
 import { getResourceById } from "@/lib/resources";
-import { EXPERIENCE_LABELS, type LearningPath, type Resource } from "@/lib/types";
+import {
+  EXPERIENCE_LABELS,
+  type LearningPath,
+  type Resource,
+} from "@/lib/types";
+import type { ActivePlan } from "@/lib/learning-progress";
+
+type DashboardSnapshot = {
+  activePlan: ActivePlan | null;
+  bookmarks: string[];
+  pathSummaries: { path: LearningPath; done: number; total: number }[];
+};
 
 function subscribe(callback: () => void) {
   window.addEventListener(PROGRESS_CHANGE_EVENT, callback);
@@ -49,11 +61,19 @@ function getDashboardSnapshot() {
   };
 }
 
+const getCachedDashboardSnapshot = createCachedSnapshot(getDashboardSnapshot);
+
+const EMPTY_DASHBOARD_SNAPSHOT: DashboardSnapshot = {
+  activePlan: null,
+  bookmarks: [],
+  pathSummaries: [],
+};
+
 export function LearningDashboard() {
   const snapshot = useSyncExternalStore(
     subscribe,
-    getDashboardSnapshot,
-    () => ({ activePlan: null, bookmarks: [], pathSummaries: [] }),
+    getCachedDashboardSnapshot,
+    () => EMPTY_DASHBOARD_SNAPSHOT,
   );
 
   const plan = useMemo(() => {

@@ -8,6 +8,7 @@ import {
   buildPathSteps,
 } from "@/lib/learning-steps";
 import {
+  createCachedSnapshot,
   kitProgressKey,
   pathProgressKey,
   readActivePlan,
@@ -57,10 +58,12 @@ function computeContinueState(): ContinueState | null {
   };
 }
 
+const getCachedContinueState = createCachedSnapshot(computeContinueState);
+
 export function ContinueLearningBanner() {
   const state = useSyncExternalStore(
     subscribe,
-    computeContinueState,
+    getCachedContinueState,
     () => null,
   );
 
