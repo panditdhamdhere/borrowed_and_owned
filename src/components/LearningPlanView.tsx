@@ -104,47 +104,79 @@ export function LearningPlanView({ plan }: LearningPlanViewProps) {
         </div>
       </div>
 
-      {plan.starterKit && kitKey && (
-        <section>
-          <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
-            Start here
-          </p>
-          <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
-            {plan.starterKit.title}
-          </h2>
-          <p className="mb-6 max-w-2xl text-zinc-600 dark:text-zinc-400">
-            {plan.starterKit.description}
-          </p>
-          <ProgressStepList
-            steps={starterSteps}
-            completed={kitProgress.completed}
-            onToggle={kitProgress.toggleStep}
-          />
-        </section>
-      )}
-
-      <section>
-        <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
-          Learning path
-        </p>
-        <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
-          {plan.path.title}
-        </h2>
-        <p className="mb-6 max-w-2xl text-zinc-600 dark:text-zinc-400">
-          {plan.path.description}
-        </p>
-        <ProgressStepList
-          steps={pathSteps}
-          completed={pathProgress.completed}
-          onToggle={pathProgress.toggleStep}
-        />
-        <Link
-          href={`/paths/${plan.path.id}`}
-          className="mt-4 inline-block text-sm text-rust hover:text-rust-light"
-        >
-          View full path →
-        </Link>
-      </section>
+      <div
+        className={
+          plan.starterKit && kitKey
+            ? "grid gap-10 xl:grid-cols-2 xl:items-start"
+            : undefined
+        }
+      >
+        {plan.starterKit && kitKey ? (
+          <>
+            <section>
+              <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
+                Start here
+              </p>
+              <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                {plan.starterKit.title}
+              </h2>
+              <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                {plan.starterKit.description}
+              </p>
+              <ProgressStepList
+                steps={starterSteps}
+                completed={kitProgress.completed}
+                onToggle={kitProgress.toggleStep}
+              />
+            </section>
+            <section>
+              <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
+                Learning path
+              </p>
+              <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                {plan.path.title}
+              </h2>
+              <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                {plan.path.description}
+              </p>
+              <ProgressStepList
+                steps={pathSteps}
+                completed={pathProgress.completed}
+                onToggle={pathProgress.toggleStep}
+              />
+              <Link
+                href={`/paths/${plan.path.id}`}
+                className="mt-4 inline-block text-sm text-rust hover:text-rust-light"
+              >
+                View full path →
+              </Link>
+            </section>
+          </>
+        ) : (
+          <section>
+            <p className="mb-1 text-sm font-medium uppercase tracking-wide text-rust dark:text-rust-light">
+              Learning path
+            </p>
+            <h2 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+              {plan.path.title}
+            </h2>
+            <p className="mb-6 max-w-3xl text-zinc-600 dark:text-zinc-400">
+              {plan.path.description}
+            </p>
+            <ProgressStepList
+              steps={pathSteps}
+              completed={pathProgress.completed}
+              onToggle={pathProgress.toggleStep}
+            />
+            <Link
+              href={`/paths/${plan.path.id}`}
+              className="mt-4 inline-block text-sm text-rust hover:text-rust-light"
+            >
+              View full path →
+            </Link>
+          </section>
+        )}
+      </div>
 
       <div className="flex flex-wrap gap-3 border-t border-zinc-200 pt-8 dark:border-zinc-800">
         <Link

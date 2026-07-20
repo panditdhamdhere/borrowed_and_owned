@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetchGitHubStars } from "@/lib/github-stars";
+import { SITE_CONTAINER_CLASS } from "@/lib/layout";
 import { siteConfig } from "@/lib/site";
 import { GitHubStarButton } from "./GitHubStarButton";
 import { RustCrab } from "./RustCrab";
@@ -19,7 +20,7 @@ export async function Header() {
 
   return (
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur-sm dark:border-zinc-800/80 dark:bg-zinc-950/80">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div className={`${SITE_CONTAINER_CLASS} flex items-center justify-between py-5`}>
         <Link href="/" className="group flex items-center gap-3">
           <RustCrab
             size={36}

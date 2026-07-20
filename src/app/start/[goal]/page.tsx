@@ -53,12 +53,10 @@ export default async function StartGoalPage({
 
   return (
     <PageShell>
-      <div className="mx-auto max-w-3xl">
-        <LearningPlanView
-          key={`${plan.goal.id}-${plan.experience}`}
-          plan={plan}
-        />
-      </div>
+      <LearningPlanView
+        key={`${plan.goal.id}-${plan.experience}`}
+        plan={plan}
+      />
     </PageShell>
   );
 }
